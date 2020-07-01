@@ -4,6 +4,7 @@
 
 ## C++与STL <a id="cpp-stl"></a>
 
+* [QT相关](cpp-stl/qt.md)
 * [STL深入源码](cpp-stl/stl-source-analysis.md)
 * [STL常问面试题](cpp-stl/stl-interview-questions.md)
 
@@ -29,4 +30,5 @@
 * [编译原理](others/compilers.md)
 * [分布式](others/distributed-system.md)
 * [虚拟技术](others/virtual-technology.md)
+* [体系结构](others/architecture.md)
 
