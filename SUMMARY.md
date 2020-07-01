@@ -24,3 +24,9 @@
 * [Redis](database/redis.md)
 * [MySQL](database/mysql.md)
 
+## 其他 <a id="others"></a>
+
+* [编译原理](others/compilers.md)
+* [分布式](others/distributed-system.md)
+* [虚拟技术](others/virtual-technology.md)
+
