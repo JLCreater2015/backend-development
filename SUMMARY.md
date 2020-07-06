@@ -11,7 +11,8 @@
 
 ## 操作系统和Linux <a id="operating-system"></a>
 
-* [操作系统基础](operating-system/operating-system-basics.md)
+* [操作系统基础](operating-system/operating-system-basics/README.md)
+  * [进程间通信](operating-system/operating-system-basics/inter-process-communication.md)
 * [Linux基础](operating-system/linux-basics/README.md)
   * [理解inode](operating-system/linux-basics/linux-inode.md)
 * [Linux常考命令](operating-system/linux-command.md)
@@ -28,9 +29,12 @@
 * [Redis](database/redis.md)
 * [MySQL](database/mysql.md)
 
+## 编译和调试 <a id="compile-and-debug"></a>
+
+* [编译原理](compile-and-debug/compilers.md)
+
 ## 其他 <a id="others"></a>
 
-* [编译原理](others/compilers.md)
 * [分布式](others/distributed-system.md)
 * [虚拟技术](others/virtual-technology.md)
 * [体系结构](others/architecture.md)
