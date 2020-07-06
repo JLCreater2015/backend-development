@@ -12,7 +12,8 @@
 ## 操作系统和Linux <a id="operating-system"></a>
 
 * [操作系统基础](operating-system/operating-system-basics.md)
-* [Linux基础](operating-system/linux-basics.md)
+* [Linux基础](operating-system/linux-basics/README.md)
+  * [理解inode](operating-system/linux-basics/linux-inode.md)
 * [Linux常考命令](operating-system/linux-command.md)
 * [Shell编程](operating-system/shell-programming.md)
 * [常见面试题](operating-system/os-interview-questions.md)
