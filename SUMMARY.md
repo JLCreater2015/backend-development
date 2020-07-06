@@ -15,7 +15,10 @@
   * [进程间通信](operating-system/operating-system-basics/inter-process-communication.md)
 * [Linux基础](operating-system/linux-basics/README.md)
   * [理解inode](operating-system/linux-basics/linux-inode.md)
-* [Linux常考命令](operating-system/linux-command.md)
+* [Linux常考命令](operating-system/linux-command/README.md)
+  * [三剑客之grep](operating-system/linux-command/command-grep.md)
+  * [三剑客之sed](operating-system/linux-command/command-sed.md)
+  * [三剑客之awk](operating-system/linux-command/command-awk.md)
 * [Shell编程](operating-system/shell-programming.md)
 * [常见面试题](operating-system/os-interview-questions.md)
 
@@ -36,6 +39,9 @@
 ## 其他 <a id="others"></a>
 
 * [分布式](others/distributed-system.md)
+* [正则表达式](others/regular-expression/README.md)
+  * [基本正则表达式](others/regular-expression/basic-regular-expression.md)
+  * [扩展正则表达式](others/regular-expression/extended-regular-expression.md)
 * [虚拟技术](others/virtual-technology.md)
 * [体系结构](others/architecture.md)
 
