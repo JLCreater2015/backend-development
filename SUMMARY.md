@@ -25,7 +25,8 @@
 ## 网络通信与网络编程 <a id="network-communication-and-programming"></a>
 
 * [计算机网络](network-communication-and-programming/computer-network.md)
-* [协议森林](network-communication-and-programming/agreement-forest.md)
+* [协议森林](network-communication-and-programming/agreement-forest/README.md)
+  * [DNS](network-communication-and-programming/agreement-forest/protocol-dns.md)
 
 ## 数据库 <a id="database"></a>
 
