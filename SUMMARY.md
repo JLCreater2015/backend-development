@@ -5,7 +5,9 @@
 ## C++与STL <a id="cpp-stl"></a>
 
 * [QT相关](cpp-stl/qt.md)
-* [C++标准库（一）](cpp-stl/cpp-standard-library-1.md)
+* [C++标准库](cpp-stl/cpp-standard-library/README.md)
+  * [Tuple](cpp-stl/cpp-standard-library/pair-tuple.md)
+  * [String类](cpp-stl/cpp-standard-library/string-class.md)
 * [STL深入源码](cpp-stl/stl-source-analysis.md)
 * [STL常问面试题](cpp-stl/stl-interview-questions.md)
 
