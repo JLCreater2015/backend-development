@@ -88,26 +88,6 @@ Connection: keep-alive
 
 使用`Content-Lenght`字段的前提条件是，服务器发送响应之前，必须知道响应的数据长度。但是，对于一些耗时的动态操作来说，服务器要等到所有操作完成后，才能发送数据，效率不高。因此，`HTTP`采用了“流模式（`stream`）”，即“分块传输编码”（`chunked transfer encoding`）方式，表明响应的数据长度未定，这样就可以产生一块数据，就发送一块数据，提高服务器的响应效率。只要请求或响应的头信息里有`Transfer-Encoding`字段，就表明响应将由数量未定的数据组成。每个非空的数据块之前，都会有一个`16`进制的数值，表示这个块的长度；最后一个是大小为`0`的块，表示本次响应数据发送完了。
 
-```http
-HTTP/1.1 200 OK
-Content-Type: text/plain
-Transfer-Encoding: chunked
-
-25
-This is the data in the first chunk
-
-1C
-and this is the second one
-
-3
-con
-
-8
-sequence
-
-0
-```
-
 #### 5.其它特性
 
 新增了许多的请求方式：`PUT`、`PATCH`、`OPTIONS`、`DELETE`、`TRACE`，还增加了`Host`字段，用来指定服务器的域名，就可以把同一请求发送给不同的网站，为虚拟主机的发展奠定了基础。
@@ -210,6 +190,40 @@ Accept-Language: zh-CN,zh;q=0.8,en;q=0.6
 | TRACE | 回显服务器收到的请求，主要用于测试或诊断。 |
 
 ### 🖌 3、GET和POST
+
+### 🖌 4、条件GET
+
+HTTP 条件 GET 是 HTTP 协议为了减少不必要的带宽浪费，提出的一种方案。详见 [RFC2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) 。
+
+HTTP 条件 GET 使用的时机：客户端之前已经访问过某网站，并打算再次访问该网站。
+
+HTTP 条件 GET 使用的方法：客户端向服务器发送一个包询问是否在上一次访问网站的时间后是否更改了页面，如果服务器没有更新，显然不需要把整个网页传给客户端，客户端只要使用本地缓存即可，如果服务器对照客户端给出的时间已经更新了客户端请求的网页，则发送这个更新了的网页给用户。
+
+> 下面是一个具体的发送接受报文示例：
+>
+> 客户端发送请求：
+
+```http
+ GET / HTTP/1.1  
+ Host: www.sina.com.cn:80  
+ If-Modified-Since: Thu, 4 Feb 2010 20:39:13 GMT  
+ Connection: Close  
+```
+
+> 第一次请求时，服务器端返回请求数据，之后的请求，服务器根据请求中的 `If-Modified-Since` 字段判断响应文件没有更新，如果没有更新，服务器返回一个 `304 Not Modified`响应，告诉浏览器请求的资源在浏览器上没有更新，可以使用已缓存的上次获取的文件。
+
+```http
+ HTTP/1.0 304 Not Modified  
+ Date: Thu, 04 Feb 2010 12:38:41 GMT  
+ Content-Type: text/html  
+ Expires: Thu, 04 Feb 2010 12:39:41 GMT  
+ Last-Modified: Thu, 04 Feb 2010 12:29:04 GMT  
+ Age: 28  
+ X-Cache: HIT from sy32-21.sina.com.cn  
+ Connection: close 
+```
+
+> 如果服务器端资源已经更新的话，就返回正常的响应。
 
 ## ✏ 响应消息Response
 
@@ -321,4 +335,78 @@ HTTP协议定义Web客户端如何从Web服务器请求Web页面，以及服务�
 > 5、释放 TCP连接；
 >
 > 6、浏览器将该 html 文本解析并显示内容。
+
+## ✏ Transfer-Encoding
+
+`Transfer-Encoding` 是一个用来标示 `HTTP` 报文传输格式的头部值。尽管这个取值理论上可以有很多，但是当前的 `HTTP` 规范里实际上只定义了一种传输取值——`chunked`。
+
+如果一个`HTTP`消息（请求消息或应答消息）的`Transfer-Encoding`消息头的值为`chunked`，那么消息体由数量未定的块组成，并以最后一个大小为`0`的块为结束。每一个非空的块都以该块包含数据的字节数（字节数以十六进制表示）开始，跟随一个`CRLF` （回车及换行），然后是数据本身，最后块`CRLF`结束。在一些实现中，块大小和`CRLF`之间填充有**白空格**（`0x20`）。
+
+最后一块是单行，由块大小（`0`），一些可选的填充白空格，以及`CRLF`。最后一块不再包含任何数据，但是可以发送可选的尾部，包括消息头字段。消息最后以`CRLF`结尾。
+
+一个示例响应如下：
+
+```http
+HTTP/1.1 200 OK
+Content-Type: text/plain
+Transfer-Encoding: chunked
+
+25
+This is the data in the first chunk
+
+1C
+and this is the second one
+
+3
+con
+
+8
+sequence
+
+0
+```
+
+> 注意：
+>
+> 1. `chunked` 和 `multipart` 两个名词在意义上有类似的地方，不过在 `HTTP` 协议当中这两个概念则不是一个类别的。`multipart` 是一种 `Content-Type`，标示 `HTTP` 报文内容的类型，而 `chunked` 是一种传输格式，标示报头将以何种方式进行传输。
+> 2. `chunked` 传输不能事先知道内容的长度，只能靠最后的空 `chunk` 块来判断，因此对于下载请求来说，是没有办法实现进度的。在浏览器和下载工具中，偶尔我们也会看到有些文件是看不到下载进度的，即采用 chunked 方式进行下载。
+> 3. `chunked` 的优势在于，服务器端可以边生成内容边发送，无需事先生成全部的内容。`HTTP/2` 不支持 `Transfer-Encoding: chunked`，因为 HTTP/2 有自己的 `streaming` 传输方式（Source：[MDN - Transfer-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Transfer-Encoding)）。
+
+## ✏ Http持久连接
+
+`HTTP` 协议采用“请求-应答”模式，当使用普通模式，即非 `Keep-Alive` 模式时，每个**请求/应答**客户和服务器都要新建一个连接，完成之后立即断开连接（HTTP 协议为无连接的协议）；当使用 `Keep-Alive` 模式（又称持久连接、连接重用）时，`Keep-Alive` 功能使客户端到服务器端的连接持续有效，当出现对服务器的后继请求时，`Keep-Alive` 功能避免了建立或者重新建立连接。
+
+在 HTTP 1.0 版本中，并没有官方的标准来规定 `Keep-Alive` 如何工作，因此实际上它是被附加到 `HTTP 1.0`协议上，如果客户端浏览器支持 `Keep-Alive` ，那么就在`HTTP`请求头中添加一个字段 `Connection: Keep-Alive`，当服务器收到附带有 `Connection: Keep-Alive` 的请求时，它也会在响应头中添加一个同样的字段来使用 `Keep-Alive` 。这样一来，客户端和服务器之间的HTTP连接就会被保持，不会断开（直到超过 `Keep-Alive` 规定的时间），当客户端发送另外一个请求时，就使用这条已经建立的连接。
+
+由于 HTTP 1.0 没有官方的 `Keep-Alive` 规范，并且也已经基本被淘汰，在 `HTTP 1.1` 版本中，默认情况下所有连接都被保持，如果加入 `"Connection: close"` 才关闭。目前大部分浏览器都使用 `HTTP 1.1` 协议，也就是说默认都会发起 `Keep-Alive` 的连接请求了，所以是否能完成一个完整的 `Keep-Alive` 连接就看服务器设置情况。
+
+> **注意：**
+>
+> 1. `HTTP Keep-Alive` 简单说就是保持当前的TCP连接，避免了重新建立连接。
+> 2. `HTTP` 长连接不可能一直保持，例如 `Keep-Alive: timeout=5, max=100`，表示这个TCP通道可以保持5秒，`max=100`表示这个长连接最多接收`100`次请求就断开。
+> 3. `HTTP` 是一个无状态协议，这意味着每个请求都是独立的，**Keep-Alive** 没能改变这个结果。另外，`Keep-Alive`也不能保证客户端和服务器之间的连接一定是活跃的，在 `HTTP1.1` 版本中也如此。唯一能保证的就是当连接被关闭时你能得到一个通知，所以不应该让程序依赖于 `Keep-Alive` 的保持连接特性，否则会有意想不到的后果。
+> 4. 使用长连接之后，客户端、服务端怎么知道本次传输结束呢？两部分：1. 判断传输数据是否达到了`Content-Length` 指示的大小；2. 动态生成的文件没有 `Content-Length` ，它是分块传输`（chunked）`，这时候就要根据 `chunked` 编码来判断，`chunked` 编码的数据在最后有一个空 `chunked` 块，表明本次传输数据结束。
+
+## ✏ Http Pipelining（管线化）
+
+默认情况下 `HTTP` 协议中每个传输层连接只能承载一个 `HTTP` 请求和响应，浏览器会在收到上一个请求的响应之后，再发送下一个请求。在使用持久连接的情况下，某个连接上消息的传递类似于`请求1 -> 响应1 -> 请求2 -> 响应2 -> 请求3 -> 响应3`。
+
+`HTTP Pipelining`（管线化）是将多个 `HTTP` 请求整批提交的技术，在传送过程中不需等待服务端的回应。使用 `HTTP Pipelining` 技术之后，某个连接上的消息变成了类似这样`请求1 -> 请求2 -> 请求3 -> 响应1 -> 响应2 -> 响应3`。
+
+> 注意：
+>
+> 1. 管线化机制通过持久连接（`persistent connection`）完成，仅 `HTTP/1.1` 支持此技术（`HTTP/1.0`不支持）。
+> 2. 只有 GET 和 HEAD 请求可以进行管线化，而 POST 则有所限制。
+> 3. 初次创建连接时不应启动管线机制，因为对方（服务器）不一定支持 HTTP/1.1 版本的协议。
+> 4. 管线化不会影响响应到来的顺序，如上面的例子所示，响应返回的顺序并未改变。
+> 5. `HTTP /1.1` 要求服务器端支持管线化，但并不要求服务器端也对响应进行管线化处理，只是要求对于管线化的请求不失败即可。
+> 6. 由于上面提到的服务器端问题，开启管线化很可能并不会带来大幅度的性能提升，而且很多服务器端和代理程序对管线化的支持并不好，因此现代浏览器如 `Chrome` 和 `Firefox` 默认并未开启管线化支持。
+
+## ✏ 会话跟踪
+
+
+
+## ✏ Http缓存机制
+
+## ✏ 跨域攻击
 
