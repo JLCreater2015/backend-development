@@ -38,13 +38,46 @@ description: 总结正则表达式的规则和使用方法。
 
 ### 🖌 2、扩展正则表达式元字符总结
 
-| 元字符 | 作用 |
-| :---: | :--- |
-| `+` | 重复一次或一次以上的前一个字符。执行`“egrep -n 'wo+d' test.txt”`命令，即可查询`“wood”`、`“woood”`、`“woooood”`等字符串。 |
-| `?` | 匹配零次或一次前一个字符。执行`“egrep -n 'bes?t' test.txt”`命令，即可查询`“bet”` 和 `“best”`这两个字符串。 |
-| `|` | 使用或`(or)`的方式匹配多个字符。执行`“egrep -n 'of|is|on' test.txt”`命令，即可查询`“of”` 、`“is”`或 `“on”`这两个字符串。 |
-| `( )` | 查找“组”字符串。执行`“egrep -n 't(a|e)st' test.txt”`命令，即可查询`“tast”` 和 `“test”`这两个字符串。 |
-| `( )+` | 匹配多个重复的组。执行`“egrep -n 'A(xyz)+C' test.txt”`命令，查询开头是`“A”`，结尾是`“C”`，中间有一个以上的`“xyz”`的字符串。 |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">&#x5143;&#x5B57;&#x7B26;</th>
+      <th style="text-align:left">&#x4F5C;&#x7528;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><code>+</code>
+      </td>
+      <td style="text-align:left">&#x91CD;&#x590D;&#x4E00;&#x6B21;&#x6216;&#x4E00;&#x6B21;&#x4EE5;&#x4E0A;&#x7684;&#x524D;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x3002;&#x6267;&#x884C;<code>&#x201C;egrep -n &apos;wo+d&apos; test.txt&#x201D;</code>&#x547D;&#x4EE4;&#xFF0C;&#x5373;&#x53EF;&#x67E5;&#x8BE2;<code>&#x201C;wood&#x201D;</code>&#x3001;<code>&#x201C;woood&#x201D;</code>&#x3001;<code>&#x201C;woooood&#x201D;</code>&#x7B49;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><code>?</code>
+      </td>
+      <td style="text-align:left">
+        <p>&#x5339;&#x914D;&#x96F6;&#x6B21;&#x6216;&#x4E00;&#x6B21;&#x524D;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x3002;&#x7B49;&#x6548;&#x4E8E;
+          {0,1}&#x3002; &#x5F53; ? &#x7D27;&#x968F;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x9650;&#x5B9A;&#x7B26;&#xFF08;<code>* &#x3001;+&#x3001;?&#x3001;{n}&#x3001;{n,} &#x6216; {n,m}</code>&#xFF09;&#x4E4B;&#x540E;&#x65F6;&#xFF0C;&#x5339;&#x914D;&#x6A21;&#x5F0F;&#x662F;&#x975E;&#x8D2A;&#x5A6A;&#x7684;&#x3002;
+          &#x975E;&#x8D2A;&#x5A6A;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x641C;&#x7D22;&#x5230;&#x7684;&#x3001;&#x5C3D;&#x53EF;&#x80FD;&#x5C11;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x800C;&#x9ED8;&#x8BA4;&#x7684;&#x8D2A;&#x5A6A;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x641C;&#x7D22;&#x5230;&#x7684;&#x3001;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+        <p>&#x6267;&#x884C;<code>&#x201C;egrep -n &apos;bes?t&apos; test.txt&#x201D;</code>&#x547D;&#x4EE4;&#xFF0C;&#x5373;&#x53EF;&#x67E5;&#x8BE2;<code>&#x201C;bet&#x201D; </code>&#x548C;<code> &#x201C;best&#x201D;</code>&#x8FD9;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><code>|</code>
+      </td>
+      <td style="text-align:left">&#x4F7F;&#x7528;&#x6216;<code>(or)</code>&#x7684;&#x65B9;&#x5F0F;&#x5339;&#x914D;&#x591A;&#x4E2A;&#x5B57;&#x7B26;&#x3002;&#x6267;&#x884C;<code>&#x201C;egrep -n &apos;of|is|on&apos; test.txt&#x201D;</code>&#x547D;&#x4EE4;&#xFF0C;&#x5373;&#x53EF;&#x67E5;&#x8BE2;<code>&#x201C;of&#x201D; </code>&#x3001;<code>&#x201C;is&#x201D;</code>&#x6216;<code> &#x201C;on&#x201D;</code>&#x8FD9;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><code>()</code>
+      </td>
+      <td style="text-align:left">&#x67E5;&#x627E;&#x201C;&#x7EC4;&#x201D;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x6267;&#x884C;<code>&#x201C;egrep -n &apos;t(a|e)st&apos; test.txt&#x201D;</code>&#x547D;&#x4EE4;&#xFF0C;&#x5373;&#x53EF;&#x67E5;&#x8BE2;<code>&#x201C;tast&#x201D; </code>&#x548C;<code> &#x201C;test&#x201D;</code>&#x8FD9;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:center"><code>()+</code>
+      </td>
+      <td style="text-align:left">&#x5339;&#x914D;&#x591A;&#x4E2A;&#x91CD;&#x590D;&#x7684;&#x7EC4;&#x3002;&#x6267;&#x884C;<code>&#x201C;egrep -n &apos;A(xyz)+C&apos; test.txt&#x201D;</code>&#x547D;&#x4EE4;&#xFF0C;&#x67E5;&#x8BE2;&#x5F00;&#x5934;&#x662F;<code>&#x201C;A&#x201D;</code>&#xFF0C;&#x7ED3;&#x5C3E;&#x662F;<code>&#x201C;C&#x201D;</code>&#xFF0C;&#x4E2D;&#x95F4;&#x6709;&#x4E00;&#x4E2A;&#x4EE5;&#x4E0A;&#x7684;<code>&#x201C;xyz&#x201D;</code>&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 🖌 3、非打印字符
 
