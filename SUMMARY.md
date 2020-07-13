@@ -18,6 +18,7 @@
 * [Linux基础](operating-system/linux-basics/README.md)
   * [理解inode](operating-system/linux-basics/linux-inode.md)
 * [Linux常考命令](operating-system/linux-command/README.md)
+  * [管道和重定向](operating-system/linux-command/redirection-and-pipeline.md)
   * [三剑客之grep](operating-system/linux-command/command-grep.md)
   * [三剑客之sed](operating-system/linux-command/command-sed.md)
   * [三剑客之awk](operating-system/linux-command/command-awk.md)
