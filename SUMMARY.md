@@ -26,7 +26,9 @@
 
 ## 网络通信与网络编程 <a id="network-communication-and-programming"></a>
 
-* [计算机网络](network-communication-and-programming/computer-network.md)
+* [计算机网络](network-communication-and-programming/computer-network/README.md)
+  * [物理层](network-communication-and-programming/computer-network/physical-layer.md)
+  * [数据链路层](network-communication-and-programming/computer-network/data-link-layer.md)
 * [网络编程](network-communication-and-programming/network-programming.md)
 * [协议森林](network-communication-and-programming/agreement-forest/README.md)
   * [DNS](network-communication-and-programming/agreement-forest/protocol-dns.md)
