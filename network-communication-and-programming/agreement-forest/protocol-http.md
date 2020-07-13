@@ -283,12 +283,14 @@ HTTP状态码由三个十进制数字组成，第一个十进制数字定义了�
 2. 200 OK                                    //客户端请求成功
 3. 204 No Content                     //无内容。服务器成功处理，但未返回内容。在未更新网页的情况下，可确保浏览器继续显示当前文档
 4. 301 Moved Permanently     //永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替
-5. 400 Bad Request                  //客户端请求有语法错误，不能被服务器所理解
-6. 401 Unauthorized                 //请求未经授权，这个状态代码必须和`WWW-Authenticate`报头域一起使用
-7. 403 Forbidden                       //服务器收到请求，但是拒绝提供服务
-8. 404 Not Found                      //请求资源不存在，eg：输入了错误的URL
-9. 500 Internal Server Error     //服务器发生不可预期的错误
-10. 503 Server Unavailable        //服务器当前不能处理客户端的请求，一段时间后可能恢复正常
+5. 302 Moved Temporarily      //请求临时重定向
+6. 304 Not Modified                 //文件未修改，可以直接使用缓存的文件
+7. 400 Bad Request                  //客户端请求有语法错误，不能被服务器所理解
+8. 401 Unauthorized                 //请求未经授权，这个状态代码必须和`WWW-Authenticate`报头域一起使用
+9. 403 Forbidden                       //服务器收到请求，但是拒绝提供服务
+10. 404 Not Found                      //请求资源不存在，eg：输入了错误的URL
+11. 500 Internal Server Error     //服务器发生不可预期的错误
+12. 503 Server Unavailable        //服务器当前不能处理客户端的请求，一段时间后可能恢复正常
 
 更多状态码[http://www.runoob.com/http/http-status-codes.html](http://www.runoob.com/http/http-status-codes.html)。
 
