@@ -4,11 +4,11 @@ description: 详解HTTP协议。
 
 # HTTP
 
-HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写，是用于从万维网（WWW:World Wide Web ）服务器传输超文本到本地浏览器的传送协议。HTTP基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等），是一个属于应用层的面向对象的协议，**默认端口号是 80**，由于其简捷、快速的方式，适用于分布式超媒体信息系统。 它于1990年被提出，由于其简洁性、快速性等特点，被广泛应用，并且经过不断的完善和发展，功能也越来越强大，目前已经发展到`HTTP/2`版本。**HTTP协议工作于客户端-服务端架构之上**，浏览器作为HTTP客户端通过URL向HTTP服务端即Web服务器发送所有请求，Web服务器根据接收到的请求后，向客户端发送响应信息。
+HTTP协议是`Hyper Text Transfer Protocol`（超文本传输协议）的缩写，是用于从万维网（`WWW:World Wide Web` ）服务器传输超文本到本地浏览器的传送协议。HTTP基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等），是一个属于应用层的面向对象的协议，**默认端口号是 80**，由于其简捷、快速的方式，适用于分布式超媒体信息系统。 它于1990年被提出，由于其简洁性、快速性等特点，被广泛应用，并且经过不断的完善和发展，功能也越来越强大，目前已经发展到`HTTP/2`版本。**HTTP协议工作于客户端-服务端架构之上**，浏览器作为HTTP客户端通过URL向HTTP服务端即Web服务器发送所有请求，Web服务器根据接收到的请求后，向客户端发送响应信息。
 
 ## ✏ URL
 
-URL，全称是UniformResourceLocator，中文叫统一资源定位符，是互联网上用来标识某一处资源的地址。以下面这个URL为例，介绍下普通URL的各部分组成：
+URL，全称是`Uniform Resource Locator`，中文叫统一资源定位符，是互联网上用来标识某一处资源的地址。以下面这个URL为例，介绍下普通URL的各部分组成：
 
 ```text
 http://www.aspxfans.com:8080/news/index.asp?boardID=5&ID=24618&page=1#name
@@ -26,17 +26,17 @@ http://www.aspxfans.com:8080/news/index.asp?boardID=5&ID=24618&page=1#name
 
 ### 🖌 URL与URI
 
-HTTP使用统一资源标识符（Uniform Resource Identifiers, URI）来传输数据和建立连接。
+HTTP使用统一资源标识符（`Uniform Resource Identifiers, URI`）来传输数据和建立连接。
 
-**URI，uniform resource identifier，统一资源标识符，用来唯一的标识一个资源。**
+**URI，`uniform resource identifier`，统一资源标识符，用来唯一的标识一个资源。**
 
 Web上可用的每种资源如HTML文档、图像、视频片段、程序等都是一个来URI来定位的，URI一般由三部组成：①访问资源的命名机制；②存放资源的主机名；③资源自身的名称，由路径表示，着重强调于资源。
 
-**URL，uniform resource locator，统一资源定位器，它是一种具体的URI，即URL可以用来标识一个资源，而且还指明了如何locate这个资源。**
+**URL，`uniform resource locator`，统一资源定位器，它是一种具体的URI，即URL可以用来标识一个资源，而且还指明了如何locate这个资源。**
 
 URL是Internet上用来描述信息资源的字符串，主要用在各种WWW客户程序和服务器程序上，特别是著名的Mosaic。 采用URL可以用一种统一的格式来描述各种信息资源，包括文件、服务器的地址和目录等，URL一般由三部组成： ①协议\(或称为服务方式\) ；②存有该资源的主机IP地址\(有时也包括端口号\) ；③主机资源的具体地址，如目录和文件名等。
 
-**URN，uniform resource name，统一资源命名，是通过名字来标识资源，它命名资源但不指定如何定位资源，比如`mailto:java-net@java.sun.com`。**
+**URN，`uniform resource name`，统一资源命名，是通过名字来标识资源，它命名资源但不指定如何定位资源，比如`mailto:java-net@java.sun.com`。**
 
 URI是以一种抽象的，高层次概念定义统一资源标识，而URL和URN则是具体的资源标识的方式。URL和URN都是一种URI。在Java中，一个URI实例可以代表绝对的，也可以是相对的，只要它符合URI的语法规则，URI类不包含任何访问资源的方法，它唯一的作用就是解析。而URL实例则不仅符合语义，还包含了定位该资源的信息，因此它不能是相对的，并且一个URL类的实例可以打开一个到达资源的流。
 
