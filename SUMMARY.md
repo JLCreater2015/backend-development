@@ -62,4 +62,5 @@
 * [虚拟技术](others/virtual-technology.md)
 * [体系结构](others/architecture.md)
 * [Git版本控制](others/git.md)
+* [设计模式](others/design-patterns.md)
 
