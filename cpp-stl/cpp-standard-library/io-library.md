@@ -63,7 +63,7 @@ static constexpr _Iostate badbit = (_Iostate)0x4;
 4. `strm::eofbit`：操作到达文件末尾时，设置此标记位；
 5. `strm::goodbit`：用来指出流未处于错误状态，此值保证为0。
 
-`strm`是一种IO类型，`failbit、badbit、eofbit`组成了流状态，如果 `badbit`、`failbit` 和 `eofbit` 任一个被置位，则检测流状态的条件会失败， 若在输入输出类里，需要加`ios::`标识符号。
+`strm`是一种IO类型，`failbit`、`badbit`、`eofbit`组成了流状态，如果 `badbit`、`failbit` 和 `eofbit` 任一个被置位，则检测流状态的条件会失败， 若在输入输出类里，需要加`ios::`标识符号。
 
 #### \*\*\*\*🖌 1.3、**查询条件状态：**
 
