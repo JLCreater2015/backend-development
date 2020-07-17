@@ -46,11 +46,22 @@ C++中标准库提供了四个标准IO对象:
 
 有5个状态标志位：
 
-1. `ios_base::iostate` ：一种机器相关的类型，提供表达条件状态的完整功能。
-2. `ios_base::badbit` ：用来标识流已经崩溃，无法挽回。
-3. `ios_base::failbit`：用来标识一个IO操作失败了。
-4. `ios_base::eofbit`：用来指出流到达了文件结束
-5. `ios_base::goodbit`：用来指出流未处于错误状态，此值保证为0。
+```cpp
+enum _Iostate { _Statmask = 0x17 }; // constants for stream states
+
+static const _Iostate goodbit = (_Iostate)0x0;
+static const _Iostate eofbit = (_Iostate)0x1;
+static const _Iostate failbit = (_Iostate)0x2;
+static const _Iostate badbit = (_Iostate)0x4;
+```
+
+1. `strm::iostate` ：一种机器相关的枚举类型，提供**表达条件状态的完整功能**。
+2. `strm::badbit` ：标识流已经崩溃，无法挽回。
+3. `strm::failbit`：用来标识一个IO操作失败了。
+4. `strm::eofbit`：操作到达文件末尾时，设置此标记位；
+5. `strm::goodbit`：用来指出流未处于错误状态，此值保证为0。
+
+`strm`是一种IO类型，`failbit、badbit、eofbit`组成了流状态，如果 `badbit`、`failbit` 和 `eofbit` 任一个被置位，则检测流状态的条件会失败， 若在输入输出类里，需要加`ios::`标识符号。
 
 查询流状态的接口：
 
@@ -59,9 +70,38 @@ C++中标准库提供了四个标准IO对象:
 3. `s.bad()` ：若流 s 的`badbit`置位，返回`true`
 4. `s.good()` ：若流s处于有效状态，返回`true`
 5. `s.clear()` ：将流 s 中所有的条件状态位复位，将流的状态设置为有效，返回`void`
-6. `s.clear(flags)` ：根据给定的`flags`标志位，将流 s 的对应条件状态位复位，`flags`的类型为`strm::iostate`，返回`void`
-7. `s.setstate(flags)` ：根据给定的`flags`标志位，将流 s 中对应的条件状态位置位，`flags`类型位`strm::iostate` 返回`void`
-8. `s.rdstate()` 返回流 s 当前的条件状态，返回值类型为 `strm::iostate`
+6. `s.clear(flags)` ：根据给定的`flags`标志位，将流 s 的对应条件状态位复位，`flags`的可选值有`ios::badbit` `ios::failbit` `ios::eofbit`，返回`void`
+7. `s.setstate(flags)` ：根据给定的`flags`标志位，将流 s 中对应的条件状态位置位，`flags`类型位`strm::iostate` ，可以用`setstate(ios::goodbit)`重设流有效状态。返回`void`
+8. `s.rdstate()` 返回流 s 当前的条件状态， 是所有**有效标志位常量**之和，返回值类型为 `strm::iostate`
+
+> Note：`badbit`被置位时，成员函数`fail()`也会返回`ture`，`eofbit`置位会导致`failbit`置位，需要注意的是，`eofbit`在读取完最后一个字符后并没有置位，当下次尝试读取一个字符失败的时候才会将`eofbit`和`failbit`置位，所以用成员函数`fail()`或`good()`来确定流的总体状态是正确的。
+
+**查询流的状态：**​ 
+
+将流作为条件使用，只能知道流是否有效。IO 库定义了一个与机器无关的 iostate 类型，它提供了表达流状态的完整功能。这个类型应作为一个位集合来使用 \(即一个数的二进制每个位来表示对应的标志位\)。通常与位运算一起使用来一次性检测或设置多个标志位。
+
+管理条件状态 ​ 
+
+流对象的 rdstate 成员返回一个 iostate 值，对应流的当前状态。setstate 操作将给定条件位置位，表示发生了对应错误。
+
+​clear\(\) 不接受参数的版本复位所有错误标志位。执行 clear\(\) 后，调用 good\(\) 会返回 true。
+
+我们可以这样使用这些成员：
+
+```cpp
+auto old_state = cin.rdstate();		// 记住 cin 的当前状态
+cin.clear();						          // 使 cin 有效
+process_input(cin);					      // 使用 cin
+cin.setstate(old_state);			    // 将 cin 置位原有状态
+```
+
+为了复位单一的条件状态位，我们首先用 rdstate 读出当前条件状态，然后用位操作将所需位复位来生成新的状态。
+
+​ 例如，下面代码将 failbit 和 badbit 复位，但保持 eofbit 不变：
+
+```cpp
+cin.clear(cin.rdstate() & ~cin.failbit & ~cin.badbit);
+```
 
 ### 🖋 2、输入
 
@@ -116,6 +156,34 @@ for (int i=0;i < 10;i++) {
 ```
 
 #### 🖌 2.2、清空输入缓冲区
+
+上一次的输入操作很有可能使输入缓冲区中残留数据，影响下一次的输入。所以需要对输入缓冲区进行清空和条件状态的复位。条件状态的复位使用`clear()`，清空输入缓冲区应该使用`ignore()`：  
+函数原型：`istream &ignore(streamsize num=1, int delim=EOF);`  
+函数作用：跳过输入流中n个字符，或在遇到指定的终止字符时提前结束（此时跳过包括终止字符在内的若干字符）。
+
+```cpp
+char str1[20]={NULL},str2[20]={NULL};
+std::cin.getline(str1,5);
+std::cin.clear();  // 清除错误标志
+std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n'); //清除缓冲区的当前行
+std::cin.getline(str2,20);
+std::cout<<"str1:"<<str1<<std::endl;
+std::cout<<"str2:"<<str2<<std::endl;
+
+> 3421132
+  ahfdkjahskj
+  str1:3421
+  str2:ahfdkjahskj
+```
+
+**注意：**
+
+1. 程序中使用`cin.ignore()`清空了输入缓冲区的当前行，使上次的输入残留下的数据没有影响到下一次的输入，这就是`ignore()`函数的主要作用。其中，`numeric_limits::max()`不过是头文件定义的流使用的最大值，也可以用一个足够大的整数代替它。如果想清空输入缓冲区，去掉换行符，使用： `cin.ignore(numeric_limits< std::streamsize>::max())`；清除`cin`里所有内容。
+2. 当输入缓冲区没有数据时，`cin.ignore()`也会阻塞等待数据的到来。
+
+#### 🖌 2.3、`while(cin >> temp)`的循环问题
+
+《c++ primer》第五版 p280 ：只有当一个流处于无错状态时，才能从他读写数据。在使用流之前，应该检查它的状态，通常用`while`循环来检查。`>>`表达式返回的是流的状态。
 
 #### 🖌 2.3、其他输入的方式
 
