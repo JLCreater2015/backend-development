@@ -44,9 +44,7 @@ C++中标准库提供了四个标准IO对象:
 
 #### 🖌 1.2、IO条件状态
 
-将流作为条件使用，只能知道流是否有效。IO 库定义了一个与机器无关的 `iostate` 类型，它提供了表达流状态的完整功能。这个类型应作为一个位集合来使用 \(即一个数的二进制每个位来表示对应的标志位\)。通常与位运算一起使用来一次性检测或设置多个标志位。
-
-**IO类有5个状态标志位：**
+将流作为条件使用，只能知道流是否有效。IO 库定义了一个与机器无关的 `iostate` 类型，它提供了表达流状态的完整功能。这个类型应作为一个位集合来使用 \(即一个数的二进制每个位来表示对应的标志位\)。通常与位运算一起使用来一次性检测或设置多个标志位。IO库定义了四个`iostate`类型的`constexpr`值：
 
 ```cpp
 enum _Iostate { _Statmask = 0x17 }; // constants for stream states
@@ -76,14 +74,12 @@ static constexpr _Iostate badbit = (_Iostate)0x4;
 
 #### \*\*\*\*🖌 1.4、**管理条件状态：** ​ 
 
-流对象的 `rdstate()` 成员返回一个`iostate` 值，对应流的当前状态。`setstate` 操作将给定条件位置位，表示发生了对应错误。`clear()` 不接受参数的版本复位所有错误标志位。执行 `clear()` 后，调用 `good()` 会返回 `true`。
-
 1. `s.clear()` ：将流 s 中所有的条件状态位复位，将流的状态设置为有效，返回`void`
 2. `s.clear(flags)` ：根据给定的`flags`标志位，将流 s 的对应条件状态位复位，`flags`的可选值有`ios::badbit` `ios::failbit` `ios::eofbit`，返回`void`
 3. `s.setstate(flags)` ：根据给定的`flags`标志位，将流 s 中对应的条件状态位置位，`flags`类型为`strm::iostate` ，可以用`setstate(ios::goodbit)`重设流有效状态。返回`void`
 4. `s.rdstate()` 返回流 s 当前的条件状态， 是所有**有效标志位常量**之和，返回值类型为 `strm::iostate`
 
-我们可以这样使用这些成员：
+流对象的 `rdstate()` 成员返回一个`iostate` 值，对应流的当前状态。`setstate` 操作将给定条件位置位，表示发生了对应错误。`clear()` 不接受参数的版本复位所有错误标志位。执行 `clear()` 后，调用 `good()` 会返回 `true`。我们可以这样使用这些成员：
 
 ```cpp
 auto old_state = cin.rdstate();		// 记住 cin 的当前状态
@@ -319,7 +315,7 @@ fmtflags setf(fmtflags fmtfl, fmtflags mask);
 
 ```cpp
 int i = 0;
-cout.setf(ios_base::showpoint|ios_base::boolalpha);
+cout.setf(ios_base::showpoint | ios_base::boolalpha);
 cout << i << endl;
 /*输出: false而不是0*/
 ```
@@ -366,6 +362,202 @@ std::cout << d << std::endl;
 ```
 
 ## ✏ 文件IO
+
+C++中用于对文件进行IO操作的类位于头文件`fstream`中，对文件进行读取操作时，需要`ifstream`对象，对文件进行写入操作时，需要`ofstream`对象。从IO结构图来看，`ifstream`和o`fstream`分别继承于`istream`和`ostream`，因此文件IO的大部分操作和标准IO类似，但却更为复杂，这些复杂主要体现在对文件的操作:
+
+1. 打开文件方式：只读方式、只写方式、读写方式；
+2. 写入文件方式：创建新文件、追加到旧文件、覆盖旧文件
+
+因此，C++中提供了多个文件打开模式， 这些模式作为`ios_base`的数据成员，用来描述文件如何关联到`ifstream`和`ofstream`：
+
+| 常量 | 含义 |
+| :---: | :--- |
+| `ios_base::app` | 追加到文件尾\(`append`\) |
+| `ios_base::ate` | 打开文件，并流位置标记移到文件尾\(`at end`\) |
+| `ios_base::binary` | 二进制文件，非文本文件 |
+| `ios_base::in` | 打开文件，允许流进行输入操作，即只读 |
+| `ios_base::out` | 打开文件，允许流进行输出操作，即只写 |
+| `ios_base::trunc` | 如果文件存在，则打开文件时进行清零 |
+
+这些模式是能够进行组合使用的，以“或”运算（`“|”`）的方式。
+
+### 🖋 1、构造方法
+
+`ifstream`构造方法如下：
+
+```cpp
+ifstream();                         //默认构造
+//指定关联文件、打开文件模式
+explicit ifstream (const char* filename, ios_base::openmode mode = ios_base::in);
+explicit ifstream (const string& filename, ios_base::openmode mode = ios_base::in);
+ifstream (const ifstream&) = delete;//拷贝构造不可用
+ifstream (ifstream&& x);            //移动构造
+```
+
+ `ofstream`构造方法如下：
+
+```cpp
+ofstream();                         //默认构造
+explicit ofstream (const char* filename, ios_base::openmode mode = ios_base::out);
+explicit ofstream (const string& filename, ios_base::openmode mode = ios_base::out);
+ofstream (const ofstream&) = delete;//拷贝构造不可用
+ofstream (ofstream&& x);            //移动构造
+```
+
+此外，`ifstream`和`ofstream`类中添加了用于操作文件的几个成员函数：
+
+```cpp
+//打开文件，将其与流对象关联，以便对其内容执行输入/输出操作;默认打开模式为只读;
+void open(const char* filename, ios_base::openmode mode = ios_base::in);
+void open(const string& filename, ios_base::openmode mode = ios_base::in);
+void open(const wchar_t *_Filename,
+        ios_base::openmode mode= ios_base::in | ios_base::out,
+        int prot = ios_base::_Openprot); //prot 是打开文件的属性
+bool is_open() const; //返回流当前是否与文件关联(是否成功打开文件);
+void close();         //关闭流，断开当前关联的文件对象;
+```
+
+打开文件的属性同样在`ios`类中也有定义：
+
+| mode类型 | 描述 |
+| :---: | :---: |
+| 0 | 普通文件，打开操作 |
+| 1 | 只读文件 |
+| 2 | 隐含文件 |
+| 4 | 系统文件 |
+
+对于文件的属性也可以使用“或”运算和`“+”`进行组合使用的。
+
+### 🖋 2、对文件流进行读写
+
+1. 可以使用 `<<` 进行对文件进行写入。
+2. 可以使用 `>>` 对文件进行读，遇到空格即结束。
+3. 使用`getline`成员函数读，遇到换行符即结束。
+
+同时，我们结合流状态接口可以判断文件是否可读可写，是否读到文件结尾等。
+
+#### **指向流中读写位置的流指针** <a id="%E6%8C%87%E5%90%91%E6%B5%81%E4%B8%AD%E8%AF%BB%E5%86%99%E4%BD%8D%E7%BD%AE%E7%9A%84%E6%B5%81%E6%8C%87%E9%92%88"></a>
+
+#### \*\*\*\*🖌 2.1、 **`tellg()`** 和 **`tellp()`**
+
+**读出或配置指向流中读写位置的流指针，**这两个成员函数不用传入参数，返回`pos_type`类型的值\(根据ANSI-C++ 标准\)。 代表当前 `get` 流指针的位置 \(用`tellg`\) 或 `put` 流指针的位置\(用`tellp`\)。
+
+#### 🖌 2.2、 **`seekg()`** 和 `seekp()`
+
+这对函数分别用来改变流指针 ****`get` 和 `put` 的位置。两个函数都被重载为两种不同的原型：
+
+```cpp
+seekg (pos_type position);
+seekp (pos_type position);
+```
+
+使用这个原型，流指针被改变为指向从文件开始计算的一个绝对位置。 要求传入的参数类型与函数 `tellg` 和 `tellp` 的返回值类型相同。
+
+```cpp
+seekg (off_type offset, seekdir direction);
+seekp (off_type offset, seekdir direction);
+```
+
+使用这个原型可以指定由参数`direction`决定的一个具体的指针开始计算的一个位移\(`offset`\)。它可以是：
+
+| 参数 | 描述 |
+| :---: | :--- |
+| `ios::beg` | 从流开始位置计算的位移 |
+| `ios::cur` | 从流指针当前位置开始计算的位移 |
+| `ios::end` | 从流末尾处开始计算的位移 |
+
+流指针 `get` 和 `put` 的值对文本文件\(`text file`\)和二进制文件\(`binary file`\)的计算方法都是不同的，因为文本模式的文件中某些特殊字符可能被修改。 由于这个原因，建议对以文本文件模式打开的文件总是使用 `seekg` 和 `seekp`的第一种原型，而且不要对 `tellg` 或 `tellp` 的返回值进行修改。 对二进制文件，可以任意使用这些函数，应该不会有任何意外的行为产生。
+
+### 🖋 3、二进制文件IO
+
+除了对文本文件进行IO操作外，可以对二进制文件进行IO操作。有些数据如字符串等可以以文本格式进行读写，这样做的好处是具有易读性，然而有些数据并不适合以文本形式读写，比如要存储一个类信息，针对于这种数据，最佳方式就是使用二进制模式来读写。二进制文件IO操作时：、
+
+* 打开文件模式需要指定`ios_base::binary`；
+* 读取文件使用`read()`；
+* 写入文件使用`write()`。
+
+`read()`函数原型如下：
+
+```cpp
+istream& read (char* s, streamsize n);
+```
+
+表示从流中提取 n 个字符，并将它们存储在 s 指向的数组中。
+
+`write()`函数原型如下：
+
+```cpp
+ostream& write (const char* s, streamsize n); 
+```
+
+表示将 s 指向的数组的前 n 个字符插入到输出流中。两者都只复制一个数据块，而不检查其内容。
+
+```cpp
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstring>
+
+void read_person();
+void write_person();
+
+class Person
+{
+private:
+       int age;
+       char name[20] = {'\0'};
+public: 
+       Person(){}
+       Person(int age,const char* name):age(age){
+               std::strcpy(this->name,name);         
+            
+       }   
+       ~Person(){}
+       void show() const { 
+               std::cout << "name: " << name << ",age: " << age << std::endl;
+       }   
+};
+
+int main()
+{
+       write_person();
+       read_person();
+       return 0;
+}
+
+void read_person() {
+       Person p1; 
+       std::ifstream infile_b("person_info.bin",std::ios_base::in | std::ios_base::binary);
+       if(!infile_b.is_open()) {
+               std::cerr << "Could't open the file!" << std::endl;
+               exit(EXIT_FAILURE);
+       }   
+       while(infile_b.read((char*)&p1,sizeof(p1))) {
+               p1.show();
+       }
+       infile_b.close();
+       std::cout << "Read Successful " << std::endl;   
+}
+
+void write_person() {
+
+       Person p1(21,"Zhangsan");
+       Person p2(32,"XiaoWang");
+           
+       std::ofstream outfile_b("person_info.bin", std::ios_base::out | std::ios_base::app
+                | std::ios_base::binary);
+       if(outfile_b.is_open()) {
+               outfile_b.write((char*)&p1,sizeof(p1));
+               outfile_b.write((char*)&p2,sizeof(p2));
+       }
+       outfile_b.close();
+       std::cout << "Write successful. " << std::endl;
+}
+```
+
+`Person`中使用`char[]`而非`string`，因为`string`内部实际上包含一个指向字符串的指针，因此在进行复制时，将得到字符串的存储地址。
+
+需要注意的是，使用二进制格式对类进行文件存取的方式，不适合具有虚函数的类，因此在写入时，会写入隐式`vtpr`指针，当读取后，可能出现错误。
 
 ## ✏ 字符串IO
 

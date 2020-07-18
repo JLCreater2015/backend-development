@@ -2,7 +2,7 @@
 
 ## ✏ Pair
 
-> pair类型定义在 **\#include &lt;utility&gt;** 头文件中，定义如下：
+> pair类型定义在 **`#include <utility>`** 头文件中，定义如下：
 
 ```cpp
 //类模板：
@@ -11,7 +11,7 @@ template<class T1,class T2> struct pair
 
 > 参数：T1是第一个值的数据类型，T2是第二个值的数据类型。
 >
-> 功能：pair将一对值\(T1和T2\)组合成一个值；这一对值可以具有不同的数据类型（T1和T2）；两个值可以分别用pair的**两个公有函数first和second访问**。
+> 功能：`pair`将一对值\(T1和T2\)组合成一个值；这一对值可以具有不同的数据类型（T1和T2）；两个值可以分别用`pair`的**两个公有函数`first`和`second`访问**。
 
 ```cpp
 std::pair<std::string, std::string> getAuthor() {
@@ -55,17 +55,17 @@ void testPair(){
 
 ## ✏ Tuple/tie\(\) --C++11
 
-> tuple容器\(元组\)定义在 \#include &lt;tuple&gt; 头文件中，它是 pair 的泛化，是表示元组容器，是不包含任何结构的，快速而低质（quick and dirty）的，可以用于函数返回多个返回值；
+> tuple容器\(元组\)定义在 `#include <tuple>` 头文件中，它是 pair 的泛化，是表示元组容器，是不包含任何结构的，快速而低质（quick and dirty）的，可以用于函数返回多个返回值；
 >
-> 可以使用直接初始化，和 "make\_tuple\(\)" 初始化，**访问元素使用 "get&lt;&gt;\(\)" 方法**，注意get里面的位置信息，必须是常量表达式\(const expression\)；
+> 可以使用直接初始化，和 `"make_tuple()"` 初始化，**访问元素使用 `"get<>()"` 方法**，注意`get`里面的位置信息，必须是常量表达式\(const expression\)；
 >
-> 可以通过 ****"std::tuple\_size&lt;decltype\(t\)&gt;::value" ****获取元素数量和 "std::tuple\_element&lt;0, decltype\(t\)&gt;::type" 获取元素类型；如果tuple类型进行比较，则需要保持元素数量相同，类型可以比较，如相同类型，或可以相互转换类型（int&double）；
+> 可以通过 ****`"std::tuple_size<decltype(t)>::value"` ****获取元素数量和 `"std::tuple_element<0, decltype(t)>::type"` 获取元素类型；如果`tuple`类型进行比较，则需要保持元素数量相同，类型可以比较，如相同类型，或可以相互转换类型（`int&double`）；
 >
-> 无法通过普通的方法遍历tuple容器，因为 "get&lt;&gt;\(\)" 方法无法使用变量获取值。
+> 无法通过普通的方法遍历`tuple`容器，因为 `"get<>()"` 方法无法使用变量获取值。
 
 ```cpp
 
 ```
 
-> 全局的 tie&lt;&gt;\(\) 函数模板定义在 &lt;tuple&gt; 头文件中，它提供了另一种访问 tuple 元素的方式。这个函数可以把 tuple 中的元素值转换为可以绑定到 tie&lt;&gt;\(\) 的左值集合。tie&lt;&gt;\(\) 的模板类型参数是从函数参数中推导的。
+> 全局的 `tie<>()` 函数模板定义在 `<tuple>` 头文件中，它提供了另一种访问 `tuple` 元素的方式。这个函数可以把 `tuple` 中的元素值转换为可以绑定到 `tie<>()` 的左值集合。`tie<>()` 的模板类型参数是从函数参数中推导的。
 
