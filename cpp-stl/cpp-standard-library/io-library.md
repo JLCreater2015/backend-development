@@ -561,6 +561,31 @@ void write_person() {
 
 ## ✏ 字符串IO
 
+1、当使用`stringstream`读取数据，再写入数据到`string`后，状态会变为`eof`，需要调用`clear()`重置状态后才能重新读写数据。
+
+```cpp
+string str;
+stringstream ss;
+ss << "hello";
+cout << ss.rdstate() << endl;//0
+ss >> str;
+cout << ss.rdstate() << endl;//1 eof
+ss << "world";
+cout << ss.rdstate() << endl;//5 eof+bad
+```
+
+2、我们可以用`str(s)`清空或修改`stringstream`中保存的`string`，用`str()`获取`stringstream`中保存的`string`。
+
+```cpp
+stringstream ss;
+ss << "123456";
+ss.str("");
+ss << "abcdefg";
+cout << ss.str()<<endl;  //abcdefg
+ss.str("100");
+cout << ss.str() << endl;//100
+```
+
 
 
 
