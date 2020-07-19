@@ -4,7 +4,6 @@
 
 ## C++与STL <a id="cpp-stl"></a>
 
-* [QT相关](cpp-stl/qt.md)
 * [C++标准库](cpp-stl/cpp-standard-library/README.md)
   * [IO](cpp-stl/cpp-standard-library/io-library.md)
   * [Tuple](cpp-stl/cpp-standard-library/pair-tuple.md)
@@ -12,6 +11,8 @@
   * [regex](cpp-stl/cpp-standard-library/regex.md)
 * [STL深入源码](cpp-stl/stl-source-analysis.md)
 * [STL常问面试题](cpp-stl/stl-interview-questions.md)
+* [QT Quick与QML](cpp-stl/qt-quick-qml.md)
+* [QT Widgets](cpp-stl/qt-widgets.md)
 
 ## 操作系统和Linux <a id="operating-system"></a>
 
