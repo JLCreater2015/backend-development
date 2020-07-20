@@ -54,6 +54,10 @@
 * [MongoDB](database/mongodb/README.md)
   * [查询](database/mongodb/select.md)
 
+## 组成原理和体系结构
+
+* [体系结构](zu-cheng-yuan-li-he-ti-xi-jie-gou/architecture.md)
+
 ## 编译和调试 <a id="compile-and-debug"></a>
 
 * [编译原理](compile-and-debug/compilers.md)
@@ -73,7 +77,6 @@
   * [基本正则表达式](others/regular-expression/basic-regular-expression.md)
   * [扩展正则表达式](others/regular-expression/extended-regular-expression.md)
 * [虚拟技术](others/virtual-technology.md)
-* [体系结构](others/architecture.md)
 * [Git版本控制](others/git.md)
 * [设计模式](others/design-patterns.md)
 
