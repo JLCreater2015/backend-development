@@ -13,6 +13,8 @@
 * [STL常问面试题](cpp-stl/stl-interview-questions.md)
 * [QT Quick与QML](cpp-stl/qt-quick-qml.md)
 * [QT Widgets](cpp-stl/qt-widgets.md)
+* [第三方库](cpp-stl/third-party-libraries/README.md)
+  * [JsonCpp](cpp-stl/third-party-libraries/jsoncpp.md)
 
 ## 操作系统和Linux <a id="operating-system"></a>
 
@@ -35,8 +37,6 @@
   * [数据链路层](network-communication-and-programming/computer-network/data-link-layer.md)
 * [网络编程](network-communication-and-programming/network-programming/README.md)
   * [cookie、session、token](network-communication-and-programming/network-programming/cookie-session-token.md)
-* [Nginx](network-communication-and-programming/nginx-reverse-proxy.md)
-* [ZeroMQ](network-communication-and-programming/zeromq-message-queue.md)
 * [网络与安全](network-communication-and-programming/network-security.md)
 * [协议森林](network-communication-and-programming/agreement-forest/README.md)
   * [DNS](network-communication-and-programming/agreement-forest/protocol-dns.md)
@@ -45,18 +45,26 @@
   * [TCP/UDP](network-communication-and-programming/agreement-forest/protocol-tcp-udp.md)
   * [网络层协议](network-communication-and-programming/agreement-forest/protocol-ip-arp-icmp.md)
   * [应用层协议](network-communication-and-programming/agreement-forest/protocol-application-layer.md)
+* [Nginx](network-communication-and-programming/nginx-reverse-proxy.md)
 
 ## 数据库 <a id="database"></a>
 
 * [Redis](database/redis.md)
 * [MySQL](database/mysql.md)
-* [MongoDB](database/mongodb.md)
+* [MongoDB](database/mongodb/README.md)
+  * [查询](database/mongodb/select.md)
 
 ## 编译和调试 <a id="compile-and-debug"></a>
 
 * [编译原理](compile-and-debug/compilers.md)
-* [Makefile编写](compile-and-debug/makefile.md)
+* [make/Makefile](compile-and-debug/make-makefile.md)
 * [cmake](compile-and-debug/cmake.md)
+
+## 进程间通信
+
+* [ZeroMQ](jin-cheng-jian-tong-xin/zeromq-message-queue.md)
+* [Kafka](jin-cheng-jian-tong-xin/kafka.md)
+* [Zookeeper](jin-cheng-jian-tong-xin/zookeeper.md)
 
 ## 其他 <a id="others"></a>
 
