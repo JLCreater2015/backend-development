@@ -77,3 +77,7 @@
 * [Git版本控制](others/git.md)
 * [设计模式](others/design-patterns.md)
 
+## 面试题
+
+* [面试中的“锁”](mian-shi-ti/locks.md)
+
