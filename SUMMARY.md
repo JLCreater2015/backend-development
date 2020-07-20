@@ -88,4 +88,6 @@
 * [计算机网络面试题](mian-shi-ti/net-interview-question.md)
 * [操作系统面试题](mian-shi-ti/os-interview-questions.md)
 * [数据库面试题](mian-shi-ti/database-interview-questions.md)
+* [其他面试题总结](mian-shi-ti/other-interview-questions.md)
+* [场景题总结](mian-shi-ti/scenario-questions.md)
 

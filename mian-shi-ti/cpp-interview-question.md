@@ -22,6 +22,8 @@
 
 10、为什么会有虚函数？
 
+11、inline与define有什么区别？
+
 ## STL
 
 1、vector 和 list 有什么区别？
@@ -29,4 +31,6 @@
 2、vector 的size\(\) 和 cap 的区别。
 
 3、hash\_map 和 map 有什么区别？
+
+4、deque的扩容机制。
 
