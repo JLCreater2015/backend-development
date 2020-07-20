@@ -10,7 +10,6 @@
   * [String类](cpp-stl/cpp-standard-library/string-class.md)
   * [regex](cpp-stl/cpp-standard-library/regex.md)
 * [STL深入源码](cpp-stl/stl-source-analysis.md)
-* [STL常问面试题](cpp-stl/stl-interview-questions.md)
 * [QT Quick与QML](cpp-stl/qt-quick-qml.md)
 * [QT Widgets](cpp-stl/qt-widgets.md)
 * [第三方库](cpp-stl/third-party-libraries/README.md)
@@ -28,7 +27,6 @@
   * [三剑客之sed](operating-system/linux-command/command-sed.md)
   * [三剑客之awk](operating-system/linux-command/command-awk.md)
 * [Shell编程](operating-system/shell-programming.md)
-* [常见面试题](operating-system/os-interview-questions.md)
 
 ## 网络通信与网络编程 <a id="network-communication-and-programming"></a>
 
@@ -63,6 +61,9 @@
 * [编译原理](compile-and-debug/compilers.md)
 * [make/Makefile](compile-and-debug/make-makefile.md)
 * [cmake](compile-and-debug/cmake.md)
+* [交叉编译](compile-and-debug/cross-compiling.md)
+* [C++/Python混合编程](compile-and-debug/cpp-python-hybrid-programming.md)
+* [C++/Lua混合编程](compile-and-debug/cpp-lua-hybrid-programming.md)
 
 ## 进程间通信
 
@@ -83,4 +84,8 @@
 ## 面试题
 
 * [面试中的“锁”](mian-shi-ti/locks.md)
+* [C++面试题总结](mian-shi-ti/cpp-interview-question.md)
+* [计算机网络面试题](mian-shi-ti/net-interview-question.md)
+* [操作系统面试题](mian-shi-ti/os-interview-questions.md)
+* [数据库面试题](mian-shi-ti/database-interview-questions.md)
 
