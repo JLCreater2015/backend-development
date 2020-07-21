@@ -1,5 +1,5 @@
 ---
-description: 学习传输层的两大协议：TCP & UDP。
+description: 学习传输层的两大协议之一：TCP。
 ---
 
 # TCP
