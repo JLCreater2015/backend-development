@@ -14,15 +14,15 @@
 >
 > 四次挥手：
 
-4、TCP流量控制，拥塞控制。【链接】
+4、TCP流量控制，拥塞控制。【[链接](../network-communication-and-programming/agreement-forest/protocol-tcp.md#7tcp-ke-kao-xing-zhi-liu-liang-kong-zhi)】
 
-5、TCP与UDP的区别。【链接】
+5、TCP与UDP的区别。【[链接](../network-communication-and-programming/agreement-forest/protocol-udp.md#4udp-he-tcp-de-qu-bie)】
 
 6、ttl 是什么意思？IP头部的。【链接】
 
 7、DNS 的解析过程。【链接】
 
-8、TCP的可靠性传输是怎么保证的？【链接】
+8、TCP的可靠性传输是怎么保证的？【[链接](../network-communication-and-programming/agreement-forest/protocol-tcp.md#5tcp-ke-kao-xing-zhi-bao-ying-da-xu-lie-hao)】
 
 9、tcp的粘包问题。【链接】
 
@@ -34,13 +34,13 @@
 
 13、浏览器中输入 url 会发生什么？【[链接](../network-communication-and-programming/agreement-forest/protocol-http.md#gong-zuo-yuan-li)】
 
-14、tcp中序号的作用。
+14、tcp中序号的作用。【[链接](../network-communication-and-programming/agreement-forest/protocol-tcp.md#5tcp-ke-kao-xing-zhi-bao-ying-da-xu-lie-hao)】
 
 15、http中的content-type表示什么？【[链接](../network-communication-and-programming/agreement-forest/protocol-http.md#qing-qiu-xiao-xi-request)】
 
 16、Ddos攻击。
 
-17、http是否无状态？如何有状态？session和Cookies的区别。
+17、http是否无状态？如何有状态？
 
 18、http2.0特性？介绍一下http2.0。【[链接](../network-communication-and-programming/agreement-forest/protocol-http.md#4-http-2)】
 
