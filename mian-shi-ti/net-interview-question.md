@@ -4,11 +4,15 @@
 
 2、get和post的区别。【链接】
 
-3、TCP三次握手和四次挥手。【链接】
+3、TCP三次握手和四次挥手。【[链接](../network-communication-and-programming/agreement-forest/protocol-tcp-udp.md#3tcp-lian-jie-he-shi-fang)】
 
 * 为什么建立连接需要三次，断开连接为什么要四次？
 * time\_wait 是在哪个步骤？
 * 主动断开方的状态（FIN\_WAIT1，2，TIME\_WAIT）
+
+> 三次握手：1、建立连接时，客户端发送SYN包（SYN=i）到服务器，并进入到SYN-SEND状态，等待服务器确认。2、服务器收到SYN包，必须确认客户的SYN（ack=i+1）,同时自己也发送一个SYN包（SYN=k）,即SYN+ACK包，此时服务器进入SYN-RECV状态。3、客户端收到服务器的SYN+ACK包，向服务器发送确认报ACK（ack=k+1）,此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手，客户端与服务器开始传送数据。
+>
+> 四次挥手：
 
 4、TCP流量控制，拥塞控制。【链接】
 
