@@ -1,8 +1,8 @@
 ---
-description: 学习网络层中重要的几个协议：IP、ARP/RARP、ICMP、IGMP。
+description: 学习网络层中其他几个重要的协议：ARP/RARP、ICMP、IGMP。
 ---
 
 # 网络层协议
 
-## ✏ `IP`协议之`IPv4`
+## ✏ `ICMP`协议
 

@@ -4,7 +4,7 @@
 
 2、get和post的区别。【[链接](../network-communication-and-programming/agreement-forest/protocol-http.md#3get-he-post)】
 
-3、TCP三次握手和四次挥手。【[链接](../network-communication-and-programming/agreement-forest/protocol-tcp-udp.md#3tcp-lian-jie-he-shi-fang)】
+3、TCP三次握手和四次挥手。【[链接](../network-communication-and-programming/agreement-forest/protocol-tcp.md#3tcp-lian-jie-he-shi-fang)】
 
 * 为什么建立连接需要三次，断开连接为什么要四次？
 * time\_wait 是在哪个步骤？
