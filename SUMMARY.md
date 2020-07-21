@@ -80,6 +80,7 @@
 * [虚拟技术](others/virtual-technology.md)
 * [Git版本控制](others/git.md)
 * [设计模式](others/design-patterns.md)
+* [编码和字符集](others/code-character-set.md)
 
 ## 面试题
 

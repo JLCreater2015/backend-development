@@ -37,7 +37,7 @@
 * 哪些系统调用会进到内核态
 * 所有的系统调用到会进入到内核态吗？
 
-3、linux 中的文件是有个数的吗？（inode）【链接】
+3、linux 中的文件是有个数的吗？（inode）【[链接](../operating-system/linux-basics/linux-inode.md#inode-hao-jin-gu-zhang)】
 
 4、Linux虚拟内存的布局。【链接】
 
