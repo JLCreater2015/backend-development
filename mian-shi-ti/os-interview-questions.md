@@ -14,7 +14,7 @@
 
 7、共享内存的细节。
 
-8、僵尸进程和孤儿进程。【[链接](../operating-system/linux-basics/linux-process.md#gu-er-jin-cheng-he-jiang-shi-jin-cheng)】
+8、僵尸进程和孤儿进程。【[链接](../operating-system/linux-basics/zombie-orphan.md)】
 
 9、内存分配 。
 
