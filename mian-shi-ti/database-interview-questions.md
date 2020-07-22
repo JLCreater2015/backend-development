@@ -24,11 +24,11 @@
 
 4、慢查询。
 
-5、innodb的锁机制
+5、InnoDB的锁机制
 
 讲了粒度分类的表锁行锁意向锁，讲了排斥性分类的读锁写锁，四种锁算法，`record lock`、`gap lock`、`next-key lock`、`previous-key lock`。
 
-6、事务的四个隔离级别？MySQL InnoDB默认的是啥？
+6、事务的四个隔离级别？MySQL InnoDB默认的是啥？【链接】
 
 7、脏读是什么？怎么解决脏读？
 
