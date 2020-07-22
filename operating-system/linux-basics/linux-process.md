@@ -116,6 +116,8 @@ static void sig_child(int signo){
      while((pid = waitpid(-1, &stat, WNOHANG)) >0)
          printf("child %d terminated.\n", pid);
 }
+// 我们不能在循环内调用wait，由于没有办法防止wait在尚有未终止的子进程在执行时堵塞，
+// wait将会堵塞到现有的子进程中第一个终止为止
 ```
 
 ![](../../.gitbook/assets/83.png)

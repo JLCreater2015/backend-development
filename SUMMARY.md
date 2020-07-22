@@ -30,6 +30,7 @@
   * [Linux进程](operating-system/linux-basics/linux-process.md)
   * [用户态和内核态](operating-system/linux-basics/user-mode-and-kernel-mode.md)
   * [理解inode](operating-system/linux-basics/linux-inode.md)
+  * [POSIX信号处理](operating-system/linux-basics/posix-signal.md)
 * [Linux常考命令](operating-system/linux-command/README.md)
   * [管道和重定向](operating-system/linux-command/redirection-and-pipeline.md)
   * [三剑客之grep](operating-system/linux-command/command-grep.md)
