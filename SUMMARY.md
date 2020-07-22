@@ -27,6 +27,8 @@
   * [文件系统](operating-system/operating-system-basics/file-system.md)
   * [IO](operating-system/operating-system-basics/io.md)
 * [Linux基础](operating-system/linux-basics/README.md)
+  * [Linux进程](operating-system/linux-basics/linux-process.md)
+  * [用户态和内核态](operating-system/linux-basics/user-mode-and-kernel-mode.md)
   * [理解inode](operating-system/linux-basics/linux-inode.md)
 * [Linux常考命令](operating-system/linux-command/README.md)
   * [管道和重定向](operating-system/linux-command/redirection-and-pipeline.md)

@@ -1,6 +1,6 @@
 # 操作系统面试题
 
-1、进程间的通信方式。【链接】
+1、进程间的通信方式。【[链接](../operating-system/operating-system-basics/inter-process-communication.md)】
 
 2、虚拟内存和物理内存之间的关系。【链接】
 
@@ -12,15 +12,15 @@
 
 6、死锁的条件和死锁的避免。
 
-7、共享内存的细节
+7、共享内存的细节。
 
-8、僵尸进程和孤儿进程
+8、僵尸进程和孤儿进程。【[链接](../operating-system/linux-basics/linux-process.md#gu-er-jin-cheng-he-jiang-shi-jin-cheng)】
 
-9、内存分配 
+9、内存分配 。
 
-10、进程调度 
+10、进程调度 。
 
-11、布隆过滤器
+11、布隆过滤器。
 
 12、线程的实现方式？有什么区别？
 
@@ -32,10 +32,10 @@
 
 1、怎么看占用内存比较多的进程。【链接】
 
-2、用户态和内核态。【链接】
+2、用户态和内核态。【[链接](../operating-system/linux-basics/user-mode-and-kernel-mode.md)】
 
-* 哪些系统调用会进到内核态
-* 所有的系统调用到会进入到内核态吗？
+* 哪些系统调用会进到内核态？
+* 所有的系统调用都会进入到内核态吗？
 
 3、linux 中的文件是有个数的吗？（inode）【[链接](../operating-system/linux-basics/linux-inode.md#inode-hao-jin-gu-zhang)】
 
