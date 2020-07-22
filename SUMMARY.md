@@ -62,9 +62,10 @@
 ## 数据库 <a id="database"></a>
 
 * [数据库原理](database/database-principle.md)
-* [Redis](database/redis.md)
+* [Redis](database/redis/README.md)
+  * [Redis数据类型](database/redis/redis-data-type.md)
 * [MySQL](database/mysql/README.md)
-  * [Untitled](database/mysql/untitled.md)
+  * [MySQL数据类型](database/mysql/mysql-data-type.md)
   * [存储引擎](database/mysql/storage-engine.md)
   * [事务](database/mysql/transaction.md)
   * [锁机制](database/mysql/locks.md)
