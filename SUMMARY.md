@@ -18,7 +18,14 @@
 ## 操作系统和Linux <a id="operating-system"></a>
 
 * [操作系统基础](operating-system/operating-system-basics/README.md)
+  * [进程](operating-system/operating-system-basics/process.md)
+  * [线程](operating-system/operating-system-basics/thread.md)
   * [进程间通信](operating-system/operating-system-basics/inter-process-communication.md)
+  * [调度](operating-system/operating-system-basics/scheduling.md)
+  * [死锁](operating-system/operating-system-basics/deadlock.md)
+  * [内存管理](operating-system/operating-system-basics/memory-management.md)
+  * [文件系统](operating-system/operating-system-basics/file-system.md)
+  * [IO](operating-system/operating-system-basics/io.md)
 * [Linux基础](operating-system/linux-basics/README.md)
   * [理解inode](operating-system/linux-basics/linux-inode.md)
 * [Linux常考命令](operating-system/linux-command/README.md)
