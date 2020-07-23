@@ -22,6 +22,12 @@ Cookie 曾经用于一般的客户端存储。虽然这是合法的，因为**�
 
 `Set-Cookie` HTTP 响应标头将 cookie 从服务器发送到用户代理，告诉客户端存储 Cookie。
 
+如：
+
+```text
+Set-Cookie: lu=Rg3vHJZnehYLjVg7qi3bZjzg; Expires=Tue, 15 Jan 2013 21:47:38 GMT; Path=/; Domain=.169it.com; HttpOnly
+```
+
 ### 🖋 1.3、Cookie 类型
 
 有两种类型的 Cookies，一种是 Session Cookies，一种是 Persistent Cookies，如果 Cookie 不包含到期日期，则将其视为会话 Cookie。会话 Cookie 存储在内存中，永远不会写入磁盘，当浏览器关闭时，此后 Cookie 将永久丢失。如果 Cookie 包含有效期 ，则将其视为持久性 Cookie。在到期指定的日期，Cookie 将从磁盘中删除。
