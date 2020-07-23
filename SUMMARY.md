@@ -94,11 +94,14 @@
 
 * [ZeroMQ](jin-cheng-jian-tong-xin/zeromq-message-queue.md)
 * [Kafka](jin-cheng-jian-tong-xin/kafka.md)
-* [Zookeeper](jin-cheng-jian-tong-xin/zookeeper.md)
+
+## 分布式
+
+* [Zookeeper](fen-bu-shi/zookeeper.md)
+* [分布式](fen-bu-shi/distributed-system.md)
 
 ## 其他 <a id="others"></a>
 
-* [分布式](others/distributed-system.md)
 * [正则表达式](others/regular-expression/README.md)
   * [基本正则表达式](others/regular-expression/basic-regular-expression.md)
   * [扩展正则表达式](others/regular-expression/extended-regular-expression.md)
