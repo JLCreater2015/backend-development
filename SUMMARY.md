@@ -66,6 +66,7 @@
 * [数据库原理](database/database-principle.md)
 * [Redis](database/redis/README.md)
   * [Redis数据类型](database/redis/redis-data-type.md)
+  * [数据持久化](database/redis/data-persistence.md)
 * [MySQL](database/mysql/README.md)
   * [MySQL数据类型](database/mysql/mysql-data-type.md)
   * [存储引擎](database/mysql/storage-engine.md)
