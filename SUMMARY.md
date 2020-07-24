@@ -27,6 +27,7 @@
   * [文件系统](operating-system/operating-system-basics/file-system.md)
   * [IO](operating-system/operating-system-basics/io.md)
 * [Linux基础](operating-system/linux-basics/README.md)
+  * [Linux共享内存](operating-system/linux-basics/shared-memory.md)
   * [Linux进程的内存空间布局](operating-system/linux-basics/linux-process-memory-space-layout.md)
   * [僵尸进程和孤儿进程](operating-system/linux-basics/zombie-orphan.md)
   * [用户态和内核态](operating-system/linux-basics/user-mode-and-kernel-mode.md)
