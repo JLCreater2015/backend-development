@@ -55,6 +55,7 @@
   * [DNS](network-communication-and-programming/agreement-forest/protocol-dns.md)
   * [HTTP](network-communication-and-programming/agreement-forest/protocol-http.md)
   * [HTTPS](network-communication-and-programming/agreement-forest/protocol-https.md)
+  * [HTTP/3](network-communication-and-programming/agreement-forest/http3-quic.md)
   * [TCP](network-communication-and-programming/agreement-forest/protocol-tcp.md)
   * [UDP](network-communication-and-programming/agreement-forest/protocol-udp.md)
   * [IP](network-communication-and-programming/agreement-forest/protocol-ip.md)
