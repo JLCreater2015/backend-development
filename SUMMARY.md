@@ -90,6 +90,8 @@
 ## 编译和调试 <a id="compile-and-debug"></a>
 
 * [编译原理](compile-and-debug/compilers.md)
+* [内存屏障](compile-and-debug/memory-barrier.md)
+* [编译器优化](compile-and-debug/compiler-optimization.md)
 * [make/Makefile](compile-and-debug/make-makefile.md)
 * [cmake](compile-and-debug/cmake.md)
 * [交叉编译](compile-and-debug/cross-compiling.md)
