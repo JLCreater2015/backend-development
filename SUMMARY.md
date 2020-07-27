@@ -47,9 +47,9 @@
   * [数据链路层](network-communication-and-programming/computer-network/data-link-layer.md)
 * [网络编程](network-communication-and-programming/network-programming/README.md)
   * [cookie、session、token](network-communication-and-programming/network-programming/cookie-session-token.md)
-  * [TCP的粘包问题](network-communication-and-programming/network-programming/tcp-stick-packages.md)
   * [网络IO模型](network-communication-and-programming/network-programming/network-io.md)
   * [网络编程底层代码示例](network-communication-and-programming/network-programming/underlying-code-example.md)
+  * [TCP的粘包问题](network-communication-and-programming/network-programming/tcp-stick-packages.md)
   * [多路复用IO](network-communication-and-programming/network-programming/multiplexing-io.md)
 * [网络与安全](network-communication-and-programming/network-security.md)
 * [协议森林](network-communication-and-programming/agreement-forest/README.md)
@@ -90,6 +90,7 @@
 ## 编译和调试 <a id="compile-and-debug"></a>
 
 * [编译原理](compile-and-debug/compilers.md)
+* [C++之静态库和动态库](compile-and-debug/static-and-dynamic-libraries.md)
 * [内存屏障](compile-and-debug/memory-barrier.md)
 * [编译器优化](compile-and-debug/compiler-optimization.md)
 * [make/Makefile](compile-and-debug/make-makefile.md)

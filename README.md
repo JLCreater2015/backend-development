@@ -42,13 +42,20 @@
 
 ### 网站 🍊 
 
+包括论坛，开源社区，学习网站等。。。
+
 * 即时通讯网：[http://www.52im.net/thread-29-1-1.html](http://www.52im.net/thread-29-1-1.html)
 
 ### 博客 🍍 
 
+包括知乎专栏，CSDN专栏，公众号专栏，简书专栏等。。。
+
 * 公众号【码农有道】[https://mp.weixin.qq.com/s/ZqLPc2ja72qyfV2n-0mYSA](https://mp.weixin.qq.com/s/ZqLPc2ja72qyfV2n-0mYSA)
+* CSDN——Linux网络：[https://blog.csdn.net/fanxiaoyu321/category\_8124610.html](https://blog.csdn.net/fanxiaoyu321/category_8124610.html)
 
 ### 项目 🍇 
+
+主要是Github上的项目。。。
 
 * `TinyWebServer`：[https://github.com/qinguoyi/TinyWebServer](https://github.com/qinguoyi/TinyWebServer)
 * `Webbench`：[https://link.zhihu.com/?target=http%3A//home.tiscali.cz/~cz210552/webbench.html](https://link.zhihu.com/?target=http%3A//home.tiscali.cz/~cz210552/webbench.html)
