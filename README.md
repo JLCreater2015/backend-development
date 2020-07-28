@@ -45,6 +45,7 @@
 包括论坛，开源社区，学习网站等。。。
 
 * 即时通讯网：[http://www.52im.net/thread-29-1-1.html](http://www.52im.net/thread-29-1-1.html)
+* C语言中文网：[http://c.biancheng.net/](http://c.biancheng.net/)
 
 ### 博客 🍍 
 

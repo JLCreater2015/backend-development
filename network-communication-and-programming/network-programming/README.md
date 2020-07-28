@@ -16,3 +16,7 @@ UNIX系统的I/O命令集，是从`Maltics`和早期系统中的命令演变出�
 
 在UNIX系统中，网络应用编程界面有两类：UNIX BSD的套接字（socket）和UNIX System V的`TLI`。由于Sun公司采用了支持`TCP/IP`的UNIX BSD操作系统，使`TCP/IP`的应用有更大的发展，其网络应用编程界面──套接字（socket）在网络软件中被广泛应用，至今已引进微机操作系统DOS和Windows系统中，成为开发网络应用软件的强有力工具。
 
+## ✏ Socket与`Winsock`
+
+Berkeley UNIX 操作系统定义了一种 API，称为 套接字接口\(socket interface\)，简称套接字（socket）。微软公司在其操作系统中采用了套接字接口 API ，形成了一个稍有不同的 API，并称之为 Windows Socket Interface，`WINSOCK`。
+
