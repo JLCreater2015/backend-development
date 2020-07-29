@@ -70,7 +70,8 @@
 
 ## 数据库 <a id="database"></a>
 
-* [数据库原理](database/database-principle.md)
+* [数据库相关概念](database/database-concept.md)
+* [关系数据库设计范式](database/relational-database-normal-form.md)
 * [SQL语句](database/sql-language.md)
 * [Redis](database/redis/README.md)
   * [Redis数据类型](database/redis/redis-data-type.md)
