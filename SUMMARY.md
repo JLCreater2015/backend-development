@@ -38,6 +38,7 @@
   * [三剑客之grep](operating-system/linux-command/command-grep.md)
   * [三剑客之sed](operating-system/linux-command/command-sed.md)
   * [三剑客之awk](operating-system/linux-command/command-awk.md)
+  * [常用操作](operating-system/linux-command/common-operations.md)
 * [Shell编程](operating-system/shell-programming.md)
 
 ## 网络通信与网络编程 <a id="network-communication-and-programming"></a>
