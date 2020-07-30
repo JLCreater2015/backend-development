@@ -124,6 +124,7 @@
 * [Git版本控制](others/git.md)
 * [设计模式](others/design-patterns.md)
 * [编码和字符集](others/code-character-set.md)
+* [Vim用法](others/vim-usage.md)
 
 ## 面试题
 
