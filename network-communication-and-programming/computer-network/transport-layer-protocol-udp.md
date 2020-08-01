@@ -2,7 +2,7 @@
 description: 学习传输层的两大协议之一：UDP。
 ---
 
-# UDP
+# 传输层之UDP协议
 
  `UDP` 是**`User Datagram Protocol`**的简称， 中文名是**用户数据报协**议，是`OSI`（`Open System Interconnection`，开放式系统互联） 参考模型中一种**无连接的传输层协议**，**传输可靠性没有保证**。`UDP`只是在`IP`的数据报服务之上增加了最基本的服务：复用和分用以及差错检测。
 

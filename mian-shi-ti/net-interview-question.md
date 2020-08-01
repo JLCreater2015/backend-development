@@ -1,10 +1,10 @@
 # 计算机网络面试题
 
-1、http请求头有哪些，http版本区别，http请求方式？【[链接](../network-communication-and-programming/agreement-forest/protocol-http.md#ban-ben-li-shi)】
+1、http请求头有哪些，http版本区别，http请求方式？【[链接](../network-communication-and-programming/computer-network/application-layer-protocol-http.md#ban-ben-li-shi)】
 
-2、get和post的区别。【[链接](../network-communication-and-programming/agreement-forest/protocol-http.md#3get-he-post)】
+2、get和post的区别。【[链接](../network-communication-and-programming/computer-network/application-layer-protocol-http.md#3get-he-post)】
 
-3、TCP三次握手和四次挥手。【[链接](../network-communication-and-programming/agreement-forest/protocol-tcp.md#3tcp-lian-jie-he-shi-fang)】
+3、TCP三次握手和四次挥手。【[链接](../network-communication-and-programming/computer-network/transport-layer-protocol-tcp.md#3tcp-lian-jie-he-shi-fang)】
 
 * 为什么建立连接需要三次，断开连接为什么要四次？
 * time\_wait 是在哪个步骤？
@@ -14,35 +14,35 @@
 >
 > 四次挥手：
 
-4、TCP流量控制，拥塞控制。【[链接](../network-communication-and-programming/agreement-forest/protocol-tcp.md#7tcp-ke-kao-xing-zhi-liu-liang-kong-zhi)】
+4、TCP流量控制，拥塞控制。【[链接](../network-communication-and-programming/computer-network/transport-layer-protocol-tcp.md#7tcp-ke-kao-xing-zhi-liu-liang-kong-zhi)】
 
-5、TCP与UDP的区别。【[链接](../network-communication-and-programming/agreement-forest/protocol-udp.md#4udp-he-tcp-de-qu-bie)】
+5、TCP与UDP的区别。【[链接](../network-communication-and-programming/computer-network/transport-layer-protocol-udp.md#4udp-he-tcp-de-qu-bie)】
 
 6、ttl 是什么意思？IP头部的。【链接】
 
 7、DNS 的解析过程。【链接】
 
-8、TCP的可靠性传输是怎么保证的？【[链接](../network-communication-and-programming/agreement-forest/protocol-tcp.md#5tcp-ke-kao-xing-zhi-bao-ying-da-xu-lie-hao)】
+8、TCP的可靠性传输是怎么保证的？【[链接](../network-communication-and-programming/computer-network/transport-layer-protocol-tcp.md#5tcp-ke-kao-xing-zhi-bao-ying-da-xu-lie-hao)】
 
 9、tcp的粘包问题。【链接】
 
-10、http的常见状态码。【[链接](../network-communication-and-programming/agreement-forest/protocol-http.md#3-zhuang-tai-ma)】
+10、http的常见状态码。【[链接](../network-communication-and-programming/computer-network/application-layer-protocol-http.md#3-zhuang-tai-ma)】
 
 11、浏览器的跨域问题。【链接】
 
 12、session 和 cookie 的问题。【链接】
 
-13、浏览器中输入 url 会发生什么？【[链接](../network-communication-and-programming/agreement-forest/protocol-http.md#gong-zuo-yuan-li)】
+13、浏览器中输入 url 会发生什么？【[链接](../network-communication-and-programming/computer-network/application-layer-protocol-http.md#gong-zuo-yuan-li)】
 
-14、tcp中序号的作用。【[链接](../network-communication-and-programming/agreement-forest/protocol-tcp.md#5tcp-ke-kao-xing-zhi-bao-ying-da-xu-lie-hao)】
+14、tcp中序号的作用。【[链接](../network-communication-and-programming/computer-network/transport-layer-protocol-tcp.md#5tcp-ke-kao-xing-zhi-bao-ying-da-xu-lie-hao)】
 
-15、http中的content-type表示什么？【[链接](../network-communication-and-programming/agreement-forest/protocol-http.md#qing-qiu-xiao-xi-request)】
+15、http中的content-type表示什么？【[链接](../network-communication-and-programming/computer-network/application-layer-protocol-http.md#qing-qiu-xiao-xi-request)】
 
 16、Ddos攻击。
 
 17、http是否无状态？如何有状态？
 
-18、http2.0特性？介绍一下http2.0。【[链接](../network-communication-and-programming/agreement-forest/protocol-http.md#4-http-2)】
+18、http2.0特性？介绍一下http2.0。【[链接](../network-communication-and-programming/computer-network/application-layer-protocol-http.md#4-http-2)】
 
 19、经过路由器的数据包的变化。
 

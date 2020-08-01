@@ -2,7 +2,7 @@
 description: 学习传输层的两大协议之一：TCP。
 ---
 
-# TCP
+# 传输层之TCP协议
 
 `TCP`\(`Transmission Control Protocol` 传输控制协议\)是一种面向连接\(连接导向\)的、可靠的、 基于`IP`的传输层协议。
 
