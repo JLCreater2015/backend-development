@@ -1,2 +1,2 @@
-# Linux基础
+# Linux
 

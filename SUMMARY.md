@@ -26,7 +26,7 @@
   * [内存管理](operating-system/operating-system-basics/memory-management.md)
   * [文件系统](operating-system/operating-system-basics/file-system.md)
   * [IO](operating-system/operating-system-basics/io.md)
-* [Linux基础](operating-system/linux-basics/README.md)
+* [Linux](operating-system/linux-basics/README.md)
   * [POSIX信号处理](operating-system/linux-basics/posix-signal.md)
   * [Linux共享内存](operating-system/linux-basics/shared-memory.md)
   * [Linux进程的内存空间布局](operating-system/linux-basics/linux-process-memory-space-layout.md)
