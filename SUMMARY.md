@@ -61,6 +61,7 @@
   * [网络编程底层代码示例](network-communication-and-programming/network-programming/underlying-code-example.md)
   * [TCP的粘包问题](network-communication-and-programming/network-programming/tcp-stick-packages.md)
   * [多路复用IO](network-communication-and-programming/network-programming/multiplexing-io.md)
+  * [幂等性](network-communication-and-programming/network-programming/idempotence.md)
 * [Linux网络编程之深入源码](network-communication-and-programming/linux-network-source-code/README.md)
   * [传输控制块TCB](network-communication-and-programming/linux-network-source-code/transmission-control-block.md)
   * [TCP数据发送之tcp\_sendmsg\(\)](network-communication-and-programming/linux-network-source-code/tcp-send-tcp_sendmsg.md)
