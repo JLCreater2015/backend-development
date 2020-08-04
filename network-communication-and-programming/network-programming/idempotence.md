@@ -57,3 +57,13 @@ POST所对应的`URI`并非创建的资源本身，而是资源的接收者。�
 
 在介绍了几种操作的语义和幂等性之后，我们来看看如何通过Web API的形式实现前面所提到的取款功能。很简单，用POST /tickets来实现create\_ticket；用`PUT /accounts/account_id/ticket_id&amount=xxx`来实现idempotent\_withdraw。值得注意的是严格来讲amount参数不应该作为`URI`的一部分，真正的`URI`应该是`/accounts/account_id/ticket_id`，而amount应该放在请求的body中。这种模式可以应用于很多场合，比如：论坛网站中防止意外的重复发帖。
 
+HTTP PATCH方法是非幂等的。因为，PATCH提供的实体则需要根据程序或其它协议的定义，解析后在服务器上执行，以此来修改服务器上的资源。换句话说，PATCH请求是会执行某个程序的，如果重复提交，程序可能执行多次，对服务器上的资源就可能造成额外的影响，这就可以解释它为什么是非幂等的了。
+
+举个例子：
+
+```http
+PATCH   /tickets/12    # 更新ticket 12
+```
+
+此时，我们服务端对方法的处理是，当调用一次方法，更新部分字段，将这条ticket记录的操作记录加一，这次，每次调用的资源是不是变了呢，所以它是有可能是非幂等的操作。
+
