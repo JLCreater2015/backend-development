@@ -121,19 +121,21 @@
 * [正则表达式](others/regular-expression/README.md)
   * [基本正则表达式](others/regular-expression/basic-regular-expression.md)
   * [扩展正则表达式](others/regular-expression/extended-regular-expression.md)
-* [设计模式](others/design-patterns.md)
+* [设计模式](others/design-patterns/README.md)
+  * [单例模式](others/design-patterns/singleton-pattern.md)
 * [虚拟技术](others/virtual-technology.md)
 * [Git版本控制](others/git.md)
 * [编码和字符集](others/code-character-set.md)
 * [Vim用法](others/vim-usage.md)
+* [一文解“锁”](others/lock-mechanism.md)
+* [面试中的“锁”](others/locks.md)
 
 ## 面试题
 
-* [面试中的“锁”](mian-shi-ti/locks.md)
-* [C++面试题总结](mian-shi-ti/cpp-interview-question.md)
+* [C++面试题](mian-shi-ti/cpp-interview-question.md)
 * [计算机网络面试题](mian-shi-ti/net-interview-question.md)
 * [操作系统面试题](mian-shi-ti/os-interview-questions.md)
 * [数据库面试题](mian-shi-ti/database-interview-questions.md)
-* [其他面试题总结](mian-shi-ti/other-interview-questions.md)
+* [其他面试题](mian-shi-ti/other-interview-questions.md)
 * [场景题总结](mian-shi-ti/scenario-questions.md)
 

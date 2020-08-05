@@ -1,4 +1,4 @@
-# C++面试题总结
+# C++面试题
 
 1、`struct{ char a; int b; }p;sizeof(p)` 是多大？
 
