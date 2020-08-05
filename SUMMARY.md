@@ -7,7 +7,7 @@
 * [C++标准库](cpp-stl/cpp-standard-library/README.md)
   * [IO](cpp-stl/cpp-standard-library/io-library.md)
   * [Tuple](cpp-stl/cpp-standard-library/pair-tuple.md)
-  * [String类](cpp-stl/cpp-standard-library/string-class.md)
+  * [String](cpp-stl/cpp-standard-library/string-class.md)
   * [regex](cpp-stl/cpp-standard-library/regex.md)
 * [STL深入源码](cpp-stl/stl-source-analysis.md)
 * [QT Quick与QML](cpp-stl/qt-quick-qml.md)
