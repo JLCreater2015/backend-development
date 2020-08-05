@@ -19,7 +19,7 @@
 
 * [操作系统基础](operating-system/operating-system-basics/README.md)
   * [进程](operating-system/operating-system-basics/process.md)
-  * [线程](operating-system/operating-system-basics/thread.md)
+  * [线程和协程](operating-system/operating-system-basics/thread-coroutine.md)
   * [进程间通信](operating-system/operating-system-basics/inter-process-communication.md)
   * [调度](operating-system/operating-system-basics/scheduling.md)
   * [死锁](operating-system/operating-system-basics/deadlock.md)
