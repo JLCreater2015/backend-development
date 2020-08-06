@@ -9,6 +9,7 @@
   * [Tuple](cpp-stl/cpp-standard-library/pair-tuple.md)
   * [String](cpp-stl/cpp-standard-library/string-class.md)
   * [regex](cpp-stl/cpp-standard-library/regex.md)
+  * [bitset](cpp-stl/cpp-standard-library/bitset.md)
 * [STL深入源码](cpp-stl/stl-source-analysis.md)
 * [QT Quick与QML](cpp-stl/qt-quick-qml.md)
 * [QT Widgets](cpp-stl/qt-widgets.md)
