@@ -100,6 +100,7 @@
 
 * [编译原理](compile-and-debug/compilers.md)
 * [C++之静态库和动态库](compile-and-debug/static-and-dynamic-libraries.md)
+* [Gdb调试](compile-and-debug/gdb-debug.md)
 * [内存屏障](compile-and-debug/memory-barrier.md)
 * [编译器优化](compile-and-debug/compiler-optimization.md)
 * [make/Makefile](compile-and-debug/make-makefile.md)
