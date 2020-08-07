@@ -2,13 +2,6 @@
 
 * [Introduce](README.md)
 
-## C++与STL <a id="cpp-stl"></a>
-
-* [QT Quick与QML](cpp-stl/qt-quick-qml.md)
-* [QT Widgets](cpp-stl/qt-widgets.md)
-* [第三方库](cpp-stl/third-party-libraries/README.md)
-  * [JsonCpp](cpp-stl/third-party-libraries/jsoncpp.md)
-
 ## 操作系统和Linux <a id="operating-system"></a>
 
 * [操作系统基础](operating-system/operating-system-basics/README.md)
@@ -128,7 +121,6 @@
 
 ## 面试题
 
-* [C++面试题](mian-shi-ti/cpp-interview-question.md)
 * [计算机网络面试题](mian-shi-ti/net-interview-question.md)
 * [操作系统面试题](mian-shi-ti/os-interview-questions.md)
 * [数据库面试题](mian-shi-ti/database-interview-questions.md)
