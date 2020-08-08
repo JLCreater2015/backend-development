@@ -126,4 +126,5 @@
 * [数据库面试题](mian-shi-ti/database-interview-questions.md)
 * [其他面试题](mian-shi-ti/other-interview-questions.md)
 * [场景题总结](mian-shi-ti/scenario-questions.md)
+* [智力题](mian-shi-ti/iq-test.md)
 
