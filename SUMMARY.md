@@ -80,6 +80,7 @@
 
 ## 组成原理和体系结构
 
+* [定点数 & 浮点数 & 内存](zu-cheng-yuan-li-he-ti-xi-jie-gou/fixed-floating-point-number.md)
 * [体系结构](zu-cheng-yuan-li-he-ti-xi-jie-gou/architecture.md)
 
 ## 编译和调试 <a id="compile-and-debug"></a>
