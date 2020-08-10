@@ -8,6 +8,25 @@
 
 ### 操作系统和`Linux` 🍇 
 
+* [操作系统基础](operating-system/operating-system-basics/)
+* [Linux](operating-system/linux-basics/)
+
+### 网络通信和网络编程 🍇 
+
+### 数据库 🍇 
+
+### 组成原理和体系结构 🍇 
+
+### 编译和调试 🍇 
+
+### 进程间通信 🍇 
+
+### 分布式 🍇 
+
+### 其他 🍇 
+
+### 面试题 🍇 
+
 ## 面试资源 ⚾ 
 
 ### 书籍 🍈 
@@ -44,6 +63,7 @@
 
 * 即时通讯网：[http://www.52im.net/thread-29-1-1.html](http://www.52im.net/thread-29-1-1.html)
 * C语言中文网：[http://c.biancheng.net/](http://c.biancheng.net/)
+* C语言技术网：[https://www.freecplus.net/index.html](https://www.freecplus.net/index.html)
 
 ### 博客 🍍 
 
