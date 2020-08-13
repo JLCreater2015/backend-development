@@ -30,6 +30,7 @@
   * [内存](operating-system/linux-system-calls/sc-memory.md)
   * [线程](operating-system/linux-system-calls/sc-thread.md)
 * [Linux系统编程](operating-system/linux-system-programming/README.md)
+  * [Linux堆内存管理](operating-system/linux-system-programming/heap-memory-management.md)
   * [pthread库](operating-system/linux-system-programming/pthread-lib.md)
 * [Shell编程](operating-system/shell-programming.md)
 
