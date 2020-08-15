@@ -20,6 +20,7 @@
   * [僵尸进程和孤儿进程](operating-system/linux-basics/zombie-orphan.md)
   * [用户态和内核态](operating-system/linux-basics/user-mode-and-kernel-mode.md)
   * [理解inode](operating-system/linux-basics/linux-inode.md)
+  * [Linux进程间通信](operating-system/linux-basics/linux-inter-process-communication.md)
 * [Linux常考命令](operating-system/linux-command/README.md)
   * [管道和重定向](operating-system/linux-command/redirection-and-pipeline.md)
   * [三剑客之grep](operating-system/linux-command/command-grep.md)
