@@ -124,3 +124,5 @@ test_vfork: cxa_atexit.c:100: __new_exitfn: Assertion `l != NULL' failed.
 
 ## ✏ 5、clone
 
+系统调用`fork()`和`vfork()`是无参数的，而`clone()`则带有参数。**`fork()`是全部复制，`vfork()`是共享内存，而clone\(\)是则可以将父进程资源有选择地复制给子进程**，而没有复制的数据结构则通过指针的复制让子进程共享，具体要复制哪些资源给子进程，由参数列表中的clone\_flags决定。
+
