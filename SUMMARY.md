@@ -110,15 +110,6 @@
 * [ZeroMQ](jin-cheng-jian-tong-xin/zeromq-message-queue.md)
 * [Kafka](jin-cheng-jian-tong-xin/kafka.md)
 
-## 分布式 & 微服务 & 云 <a id="distributed-microservices-cloud"></a>
-
-* [分布式](distributed-microservices-cloud/distributed-system.md)
-* [Zookeeper](distributed-microservices-cloud/zookeeper.md)
-* [K8S](distributed-microservices-cloud/kubernetes.md)
-* [Spring Cloud](distributed-microservices-cloud/spring-cloud.md)
-* [阿里HSF](distributed-microservices-cloud/hsf.md)
-* [阿里Spring Cloud](distributed-microservices-cloud/spring-cloud-1.md)
-
 ## 其他 <a id="others"></a>
 
 * [正则表达式](others/regular-expression/README.md)
@@ -126,7 +117,6 @@
   * [扩展正则表达式](others/regular-expression/extended-regular-expression.md)
 * [设计模式](others/design-patterns/README.md)
   * [单例模式](others/design-patterns/singleton-pattern.md)
-* [虚拟技术](others/virtual-technology.md)
 * [Git版本控制](others/git.md)
 * [编码和字符集](others/code-character-set.md)
 * [Vim用法](others/vim-usage.md)
