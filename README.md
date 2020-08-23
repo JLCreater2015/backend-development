@@ -74,6 +74,7 @@
 * 公众号【码农有道】[https://mp.weixin.qq.com/s/ZqLPc2ja72qyfV2n-0mYSA](https://mp.weixin.qq.com/s/ZqLPc2ja72qyfV2n-0mYSA)
 * CSDN——Linux网络：[https://blog.csdn.net/fanxiaoyu321/category\_8124610.html](https://blog.csdn.net/fanxiaoyu321/category_8124610.html)
 * cnblogs——MYSQL学习：[https://www.cnblogs.com/yinjw/tag/MySQL/](https://www.cnblogs.com/yinjw/tag/MySQL/)
+* cnblogs——C语言学习：[https://www.cnblogs.com/clover-toeic/category/579078.html](https://www.cnblogs.com/clover-toeic/category/579078.html)
 
 ### 项目 🍇 
 
