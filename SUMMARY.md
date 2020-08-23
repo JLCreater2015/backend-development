@@ -81,6 +81,7 @@
 * [MySQL](database/mysql/README.md)
   * [MySQL数据类型](database/mysql/mysql-data-type.md)
   * [事务](database/mysql/transaction.md)
+  * [事务隔离](database/mysql/transaction-isolation.md)
   * [存储引擎](database/mysql/storage-engine.md)
   * [MyISAM与InnoDB](database/mysql/myisam-innodb.md)
   * [锁机制](database/mysql/locks.md)
