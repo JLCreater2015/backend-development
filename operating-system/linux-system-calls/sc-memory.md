@@ -147,6 +147,8 @@ main(){
 
 使用`PROT_WRITE` 和 `MAP_SHARED`标志建立起来的文件映射，其`st_ctime(c: change)` 和 `st_mtime(m: modification)` 在对映射区写入之后与`msync()[memory synchronize]`通过`MS_SYNC` 和 `MS_ASYNC[memory asynchronize]`两个标志调用之前会被更新。
 
+### 测试
+
 测试`framebuffer`的小程序：显示红色方块。（对`Framebuffer`进行读写可以直接操作显存，该程序需要在Linux的命令行模式下运行。）
 
 ```c
