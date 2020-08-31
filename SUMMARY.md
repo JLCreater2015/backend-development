@@ -76,9 +76,11 @@
   * [中级SQL](database/sql/medium-sql-language.md)
   * [高级SQL](database/sql/advanced-sql-language.md)
 * [Redis](database/redis/README.md)
+  * [Redis数据结构](database/redis/redis-data-structure.md)
   * [Redis数据类型](database/redis/redis-data-type.md)
   * [数据持久化](database/redis/data-persistence.md)
   * [雪崩 & 击穿 & 穿透](database/redis/avalanche-penetrate-breakdown.md)
+  * [主从复制](database/redis/master-slave-replication.md)
 * [MySQL](database/mysql/README.md)
   * [MySQL数据类型](database/mysql/mysql-data-type.md)
   * [事务](database/mysql/transaction.md)
@@ -87,6 +89,7 @@
   * [MyISAM与InnoDB](database/mysql/myisam-innodb.md)
   * [锁机制](database/mysql/locks.md)
   * [索引](database/mysql/index.md)
+  * [联合索引](database/mysql/joint-index.md)
   * [集群](database/mysql/cluster.md)
 * [MongoDB](database/mongodb/README.md)
   * [查询](database/mongodb/select.md)
@@ -109,6 +112,8 @@
 * [交叉编译](compile-and-debug/cross-compiling.md)
 * [C++/Python混合编程](compile-and-debug/cpp-python-hybrid-programming.md)
 * [C++/Lua混合编程](compile-and-debug/cpp-lua-hybrid-programming.md)
+* [C++单元测试](compile-and-debug/unit-test.md)
+* [单元测试之Google Test](compile-and-debug/google-test.md)
 
 ## 进程间通信
 
