@@ -83,8 +83,8 @@ VFS子系统包括6个子模块（见下图），它们的功能如下：
 
 ![](../../.gitbook/assets/image%20%2812%29.png)
 
-1. Network Device Drivers，网络设备的驱动，和VFS子系统中的设备驱动是一样的。
-2. Device Independent Interface，和VFS子系统中的是一样的。
+1. Network Device Drivers，网络设备的驱动，和`VFS`子系统中的设备驱动是一样的。
+2. Device Independent Interface，和`VFS`子系统中的是一样的。
 3. Network Protocols，实现各种网络传输协议，例如IP**，**TCP，UDP等等。
 4. Protocol Independent Interface，屏蔽不同的硬件设备和网络协议，以相同的格式提供接口（socket\)。
 5. System Call interface，系统调用接口，向用户空间提供访问网络设备的统一的接口。
