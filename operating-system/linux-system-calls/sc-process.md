@@ -128,3 +128,77 @@ test_vfork: cxa_atexit.c:100: __new_exitfn: Assertion `l != NULL' failed.
 
 系统调用`fork()`和`vfork()`是无参数的，而`clone()`则带有参数。**`fork()`是全部复制，`vfork()`是共享内存，而clone\(\)是则可以将父进程资源有选择地复制给子进程**，而没有复制的数据结构则通过指针的复制让子进程共享，具体要复制哪些资源给子进程，由参数列表中的clone\_flags决定。
 
+## ✏ 6、`sleep & usleep & nanosleep`
+
+### 🖋 6.1、sleep
+
+```cpp
+unsigned int sleep(unsigned int seconds); // 以秒为单位
+```
+
+sleep\(\)非系统调用，sleep\(\)是在库函数中实现的，它是通过`alarm()`来设定报警时间，使用`sigsuspend()`将进程挂起在信号`SIGALARM`上。 sleep\(\)只能精确到秒级上。sleep\(\)会令目前的进程暂停，直到达到参数seconds 所指定的时间，或是被信号所中断。
+
+返回值：若进程暂停到参数seconds 所指定的时间，成功则返回0，若有信号中断则返回剩余秒数。
+
+进程调用sleep\(\)函数后进入挂起状态，等到一定时间后，被系统唤醒（时间到或者收到信号）。这个能力由sleep函数提供。
+
+```c
+unsigned int sleep(unsigned int seconds); 
+```
+
+这个函数可以让进程自己挂起seconds秒，sleep函数是由操作系统的 `nanosleep` 函数实现的，`On Linux, sleep() is implemented via nanosleep(2). See the nanosleep(2) man page for a discussion of the clock used.`核心代码：
+
+```c
+asmlinkage long sys_nanosleep(struct timespec __user *rqtp, 
+                              struct timespec __user *rmtp)
+{
+	struct timespec t;
+	unsigned long expire;
+	long ret;
+
+	expire = timespec_to_jiffies(&t) + (t.tv_sec || t.tv_nsec);
+	current->state = TASK_INTERRUPTIBLE;
+	expire = schedule_timeout(expire);
+}
+// 算出超时时间，然后挂起进程（可中断挂起），然后调用schedule_timeout。
+```
+
+```c
+fastcall signed long __sched schedule_timeout(signed long timeout)
+{
+	struct timer_list timer;
+	unsigned long expire;
+	// 算出超时时间
+	expire = timeout + jiffies;
+
+	init_timer(&timer);
+	// 超时时间
+	timer.expires = expire;
+	timer.data = (unsigned long) current;
+	// 超时回调
+	timer.function = process_timeout;
+	// 添加定时器
+	add_timer(&timer);
+	// 进程调度
+	schedule();
+	// 删除定时器
+	del_singleshot_timer_sync(&timer);
+    // 超时或者被信号唤醒，被信号唤醒的话，可能还没有超时
+	timeout = expire - jiffies;
+
+out:
+	return timeout < 0 ? 0 : timeout;
+}
+```
+
+接着往系统新增一个定时器，然后发送进程调度，该进程随即进入挂起状态。等到一定的时间后，进程会唤醒。另外我们注意到挂起的进程状态是`TASK_INTERRUPTIBLE`，即可中断的。意思是这种状态的进程可以被信号唤醒。而`TASK_UNINTERRUPTIBLE`是不能被信号唤醒的，等到超时的时候，执行`process_timeout`函数：
+
+```c
+static void process_timeout(unsigned long __data)
+{
+	wake_up_process((task_t *)__data);
+}
+```
+
+代码很简单，就是唤醒被挂起的进程。`__data`是在`timer.data = (unsigned long) current;` 中设置的。
+
