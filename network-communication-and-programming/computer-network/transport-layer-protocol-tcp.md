@@ -70,7 +70,7 @@ description: 学习传输层的两大协议之一：TCP。
 
 > **SYN攻击**：
 >
-> 在三次握手过程中，Server发送`SYN-ACK`之后，收到`Client`的`ACK`之前的`TCP`连接称为半连接（half-open connect），此时Server处于`SYN_RCVD`状态，当收到`ACK`后，Server转入`ESTABLISHED`状态。SYN攻击就是Client在短时间内伪造大量不存在的IP地址，并向Server不断地发送`SYN`包，Server回复确认包，并等待Client的确认，由于源地址是不存在的，因此，Server需要不断重发直至超时，这些伪造的`SYN`包将产时间占用未连接队列，导致正常的SYN请求因为队列满而被丢弃，从而引起网络堵塞甚至系统瘫痪。SYN攻击时一种典型的`DDOS`攻击，检测SYN攻击的方式非常简单，即当Server上有大量半连接状态且源IP地址是随机的，则可以断定遭到SYN攻击了，使用如下命令可以让之现行：
+> 在三次握手过程中，Server发送`SYN-ACK`之后，收到`Client`的`ACK`之前的`TCP`连接称为半连接（half-open connect），此时Server处于`SYN_RCVD`状态，当收到`ACK`后，Server转入`ESTABLISHED`状态。SYN攻击就是Client在短时间内伪造大量不存在的IP地址，并向Server不断地发送`SYN`包，Server回复确认包，并等待Client的确认，由于源地址是不存在的，因此，Server需要不断重发直至超时，这些伪造的`SYN`包将产时间占用未连接队列，导致正常的SYN请求因为队列满而被丢弃，从而引起网络堵塞甚至系统瘫痪。SYN攻击时一种典型的`DDOS`攻击，检测SYN攻击的方式非常简单，即当**Server上有大量半连接状态且源IP地址是随机的**，则可以断定遭到SYN攻击了，使用如下命令可以让之现行：
 
 > ```text
 > netstat -nap | grep SYN_RECV
