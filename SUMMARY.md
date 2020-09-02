@@ -106,15 +106,12 @@
 ## 编译和调试 <a id="compile-and-debug"></a>
 
 * [编译原理](compile-and-debug/compilers.md)
-* [C++之静态库和动态库](compile-and-debug/static-and-dynamic-libraries.md)
 * [Gdb调试](compile-and-debug/gdb-debug.md)
 * [内存屏障](compile-and-debug/memory-barrier.md)
 * [编译器优化](compile-and-debug/compiler-optimization.md)
 * [make/Makefile](compile-and-debug/make-makefile.md)
 * [cmake](compile-and-debug/cmake.md)
 * [交叉编译](compile-and-debug/cross-compiling.md)
-* [C++/Python混合编程](compile-and-debug/cpp-python-hybrid-programming.md)
-* [C++/Lua混合编程](compile-and-debug/cpp-lua-hybrid-programming.md)
 * [C++单元测试](compile-and-debug/unit-test.md)
 * [单元测试之Google Test](compile-and-debug/google-test.md)
 
