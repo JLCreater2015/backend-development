@@ -242,3 +242,15 @@ int listen(int sockfd, int backlog);
 int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
 ```
 
+> 参数：
+
+> sockdf：socket文件描述符
+
+> addr：传出参数，返回链接客户端地址信息，含IP地址和端口号
+
+> addrlen：传入传出参数（值-结果），传入`sizeof(addr)`大小，函数返回时返回真正接收到地址结构体的大小。
+
+> 返回值：成功返回一个新的socket文件描述符，用于和客户端通信，失败返回-1，设置errno。
+
+三方握手完成后，服务器调用accept\(\)接受连接，如果服务器调用accept\(\)时还没有客户端的连接请求，就**阻塞等待**直到有客户端连接上来。addr是一个传出参数，accept\(\)返回时传出客户端的地址和端口号。addrlen参数是一个传入传出参数（value-result argument），传入的是调用者提供的缓冲区addr的长度以避免缓冲区溢出问题，传出的是客户端地址结构体的实际长度（有可能没有占满调用者提供的缓冲区）。如果给addr参数传NULL，表示不关心客户端的地址。
+
