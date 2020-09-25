@@ -30,7 +30,7 @@
 
 11、浏览器的跨域问题。【链接】
 
-12、session 和 cookie 的问题。【链接】
+12、session 和 cookie 的区别。【链接】
 
 13、浏览器中输入 url 会发生什么？【[链接](../network-communication-and-programming/computer-network/application-layer-protocol-http.md#gong-zuo-yuan-li)】
 
@@ -52,6 +52,8 @@
 
 22、ping底层过程。
 
+23、TCP三次握手成功后拔掉网线，过一会儿再插上网线，这个过程中会发生什么？（爱奇艺面试题）
+
 ## 网络编程
 
 1、多路复用 IO。【链接】
@@ -60,11 +62,11 @@
 
 3、服务端和客户端同时调用close\(\)会怎样？
 
-4、为什么要使用反向代理？（1. 代理到常用的HTTPS端口 2. 解决跨域问题）
+4、为什么要使用反向代理？（1. 代理常用的HTTPS端口 2. 解决跨域问题）
 
-5、NIO的原理？
+5、`NIO`的原理？
 
-6、epoll的边缘触发和水平触发。
+6、`epoll`的边缘触发和水平触发。
 
 
 
