@@ -24,6 +24,8 @@
   * [Linux进程间通信](operating-system/linux-basics/linux-inter-process-communication.md)
   * [Linux虚拟文件系统](operating-system/linux-basics/linux-vfs.md)
   * [CPU亲和性](operating-system/linux-basics/cpu-affinity.md)
+  * [零拷贝技术](operating-system/linux-basics/zero-copy.md)
+  * [Linux IO栈](operating-system/linux-basics/io-stack.md)
 * [Linux常考命令](operating-system/linux-command/README.md)
   * [管道和重定向](operating-system/linux-command/redirection-and-pipeline.md)
   * [文本处理三剑客](operating-system/linux-command/command-grep-awk-sed.md)
@@ -37,6 +39,8 @@
   * [Linux堆内存管理](operating-system/linux-system-programming/heap-memory-management.md)
   * [pthread库](operating-system/linux-system-programming/pthread-lib.md)
 * [Shell编程](operating-system/shell-programming.md)
+* [Kafka](operating-system/kafka.md)
+* [ZeroMQ](operating-system/zeromq-message-queue.md)
 
 ## 网络通信与网络编程 <a id="network-communication-and-programming"></a>
 
@@ -115,15 +119,6 @@
 * [C++单元测试](compile-and-debug/unit-test.md)
 * [单元测试之Google Test](compile-and-debug/google-test.md)
 
-## 进程间通信
-
-* [ZeroMQ](jin-cheng-jian-tong-xin/zeromq-message-queue.md)
-* [Kafka](jin-cheng-jian-tong-xin/kafka.md)
-
-## 流媒体 & 编解码
-
-* [音视频编码](liu-mei-ti-bian-jie-ma/audio-video-coding.md)
-
 ## 其他 <a id="others"></a>
 
 * [正则表达式](others/regular-expression/README.md)
@@ -136,6 +131,7 @@
 * [编码和字符集](others/code-character-set.md)
 * [Vim用法](others/vim-usage.md)
 * [一文解“锁”](others/lock-mechanism.md)
+* [无锁技术](others/no-lock.md)
 * [面试中的“锁”](others/locks.md)
 
 ## 面试题
