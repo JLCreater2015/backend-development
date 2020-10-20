@@ -71,6 +71,7 @@
 * [网络安全](network-communication-and-programming/network-security.md)
 * [Nginx](network-communication-and-programming/nginx-reverse-proxy.md)
 * [Wireshark](network-communication-and-programming/wireshark.md)
+* [Libevent](network-communication-and-programming/libevent.md)
 
 ## 数据库 <a id="database"></a>
 
@@ -125,8 +126,7 @@
   * [基本正则表达式](others/regular-expression/basic-regular-expression.md)
   * [扩展正则表达式](others/regular-expression/extended-regular-expression.md)
 * [设计模式](others/design-patterns/README.md)
-  * [单例模式](others/design-patterns/singleton-pattern.md)
-  * [观察者模式](others/design-patterns/observer-pattern.md)
+  * [“组件协作”模式](others/design-patterns/component-collaboration.md)
 * [Git版本控制](others/git.md)
 * [编码和字符集](others/code-character-set.md)
 * [Vim用法](others/vim-usage.md)
