@@ -18,25 +18,25 @@
 
 5、TCP与UDP的区别。【[链接](../network-communication-and-programming/computer-network/transport-layer-protocol-udp.md#4udp-he-tcp-de-qu-bie)】
 
-6、ttl 是什么意思？IP头部的。【链接】
+6、TTL 是什么意思？IP头部的。【链接】
 
 7、DNS 的解析过程。【链接】
 
 8、TCP的可靠性传输是怎么保证的？【[链接](../network-communication-and-programming/computer-network/transport-layer-protocol-tcp.md#5tcp-ke-kao-xing-zhi-bao-ying-da-xu-lie-hao)】
 
-9、tcp的粘包问题。【链接】
+9、TCP的粘包问题。【链接】
 
-10、http的常见状态码。【[链接](../network-communication-and-programming/computer-network/application-layer-protocol-http.md#3-zhuang-tai-ma)】
+10、HTTP的常见状态码。【[链接](../network-communication-and-programming/computer-network/application-layer-protocol-http.md#3-zhuang-tai-ma)】
 
 11、浏览器的跨域问题。【链接】
 
 12、session 和 cookie 的区别。【链接】
 
-13、浏览器中输入 url 会发生什么？【[链接](../network-communication-and-programming/computer-network/application-layer-protocol-http.md#gong-zuo-yuan-li)】
+13、浏览器中输入 URL 会发生什么？【[链接](../network-communication-and-programming/computer-network/application-layer-protocol-http.md#gong-zuo-yuan-li)】
 
-14、tcp中序号的作用。【[链接](../network-communication-and-programming/computer-network/transport-layer-protocol-tcp.md#5tcp-ke-kao-xing-zhi-bao-ying-da-xu-lie-hao)】
+14、TCP中序号的作用。【[链接](../network-communication-and-programming/computer-network/transport-layer-protocol-tcp.md#5tcp-ke-kao-xing-zhi-bao-ying-da-xu-lie-hao)】
 
-15、http中的content-type表示什么？【[链接](../network-communication-and-programming/computer-network/application-layer-protocol-http.md#qing-qiu-xiao-xi-request)】
+15、HTTP中的content-type表示什么？【[链接](../network-communication-and-programming/computer-network/application-layer-protocol-http.md#qing-qiu-xiao-xi-request)】
 
 16、Ddos攻击。
 
@@ -53,6 +53,20 @@
 22、ping底层过程。
 
 23、TCP三次握手成功后拔掉网线，过一会儿再插上网线，这个过程中会发生什么？（爱奇艺面试题）
+
+24、什么是半连接队列？
+
+25、 ISN\(Initial Sequence Number\)是固定的吗？ 
+
+26、三次握手过程中可以携带数据吗？ 
+
+27、如果第三次握手丢失了，客户端服务端会如何处理？ 
+
+28、SYN攻击是什么？ 
+
+29、挥手为什么需要四次？ 
+
+30、四次挥手释放连接时，等待2MSL的意义?
 
 ## 网络编程
 
