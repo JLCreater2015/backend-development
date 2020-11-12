@@ -99,7 +99,9 @@
   * [联合索引](database/mysql/joint-index.md)
   * [主从复制](database/mysql/master-slave-replication.md)
   * [MySQL集群](database/mysql/mysql-cluster.md)
+  * [MySQL使用总结](database/mysql/mysql-summary.md)
 * [MongoDB](database/mongodb/README.md)
+  * [启动与停止](database/mongodb/start-stop.md)
   * [查询](database/mongodb/select.md)
 * [Memcached](database/memcached.md)
 
