@@ -122,6 +122,11 @@
 * [C++单元测试](compile-and-debug/unit-test.md)
 * [单元测试之Google Test](compile-and-debug/google-test.md)
 
+## 设计模式
+
+* [设计模式](she-ji-mo-shi/design-patterns.md)
+* [“组件协作”模式](she-ji-mo-shi/component-collaboration.md)
+
 ## 其他 <a id="others"></a>
 
 * [正则表达式](others/regular-expression/README.md)
