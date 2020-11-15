@@ -13,6 +13,8 @@
 
 ### 网络通信和网络编程 🍇 
 
+* [计算机网络](network-communication-and-programming/computer-network/)
+
 ### 数据库 🍇 
 
 ### 组成原理和体系结构 🍇 
@@ -84,5 +86,10 @@
 
 ## 相关链接 ⚽ 
 
+本人的博客和其他学习笔记传送门如下。。。
 
+* `CSDN`：
+* 算法笔记：
+* 机器学习笔记：
+* `Github`：
 
