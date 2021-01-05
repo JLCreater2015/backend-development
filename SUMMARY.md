@@ -105,10 +105,10 @@
   * [查询](database/mongodb/select.md)
 * [Memcached](database/memcached.md)
 
-## 组成原理和体系结构
+## 组成原理和体系结构 <a id="computer-composition"></a>
 
-* [定点数 & 浮点数 & 内存](zu-cheng-yuan-li-he-ti-xi-jie-gou/fixed-floating-point-number.md)
-* [体系结构](zu-cheng-yuan-li-he-ti-xi-jie-gou/architecture.md)
+* [定点数 & 浮点数 & 内存](computer-composition/fixed-floating-point-number.md)
+* [体系结构](computer-composition/architecture.md)
 
 ## 编译和调试 <a id="compile-and-debug"></a>
 
@@ -122,10 +122,10 @@
 * [C++单元测试](compile-and-debug/unit-test.md)
 * [单元测试之Google Test](compile-and-debug/google-test.md)
 
-## 设计模式
+## 设计模式 <a id="design-mode"></a>
 
-* [设计模式](she-ji-mo-shi/design-patterns.md)
-* [“组件协作”模式](she-ji-mo-shi/component-collaboration.md)
+* [设计模式](design-mode/design-patterns.md)
+* [“组件协作”模式](design-mode/component-collaboration.md)
 
 ## 其他 <a id="others"></a>
 
@@ -139,12 +139,12 @@
 * [无锁技术](others/no-lock.md)
 * [面试中的“锁”](others/locks.md)
 
-## 面试题
+## 面试题 <a id="interview-question"></a>
 
-* [计算机网络面试题](mian-shi-ti/net-interview-question.md)
-* [操作系统面试题](mian-shi-ti/os-interview-questions.md)
-* [数据库面试题](mian-shi-ti/database-interview-questions.md)
-* [其他面试题](mian-shi-ti/other-interview-questions.md)
-* [场景题总结](mian-shi-ti/scenario-questions.md)
-* [智力题](mian-shi-ti/iq-test.md)
+* [计算机网络面试题](interview-question/net-interview-question.md)
+* [操作系统面试题](interview-question/os-interview-questions.md)
+* [数据库面试题](interview-question/database-interview-questions.md)
+* [其他面试题](interview-question/other-interview-questions.md)
+* [场景题总结](interview-question/scenario-questions.md)
+* [智力题](interview-question/iq-test.md)
 
